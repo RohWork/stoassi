@@ -22,13 +22,19 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-xs-4">&nbsp;</div>
+			<div class="col-xs-4"></div>
                         <div class="col-xs-4"><h3>로그인</h3></div>
-			<div class="col-xs-4">&nbsp;</div>
+			<div class="col-xs-4"></div>
 		</div>
                 <div class="row">
 			<div class="col-xs-4"></div>
-			<div class="col-xs-4">로그인</div>
+                        <div class="col-xs-2"><label>아이디</label></div>
+                        <div class="col-xs-2"><label><input type="text" class="form-control"/></label></div>
+			<div class="col-xs-4"></div>
+		</div>
+                <div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-4"></div>
 			<div class="col-xs-4"></div>
 		</div>
 	</div>
