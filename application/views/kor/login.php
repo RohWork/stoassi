@@ -16,6 +16,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <!-- Custom styles for this template -->
         <link href="../../assets/css/sticky-footer-navbar.css" rel="stylesheet">
+        <style>
+            
+        </style>
     </head>
     
     <body>
@@ -28,13 +31,14 @@
 		</div>
                 <div class="row">
 			<div class="col-xs-4"></div>
-                        <div class="col-xs-2"><label>아이디</label></div>
-                        <div class="col-xs-2"><label><input type="text" class="form-control"/></label></div>
-			<div class="col-xs-4"></div>
-		</div>
-                <div class="row">
-			<div class="col-xs-4"></div>
-			<div class="col-xs-4"></div>
+                        <div class="col-xs-2"
+                            <label>아이디</label><br/>
+                            <label>비밀번호</label>
+                        </div>
+                        <div class="col-xs-2">
+                                <input type="text" class="form-control"/>
+                                <input type="text" class="form-control"/>
+                        </div>
 			<div class="col-xs-4"></div>
 		</div>
 	</div>
