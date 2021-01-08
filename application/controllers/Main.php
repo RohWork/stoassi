@@ -16,7 +16,6 @@ class Main extends CI_Controller {
 	
 	public function index()
 	{
-                echo "test";
 		$this->load->view(LANGUAGE.'/login');
 	}
         
