@@ -16,8 +16,12 @@ class Main extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view(LANGUAGE.'/header', $this->head_data);
-		$this->load->view(LANGUAGE.'/main');
+		$this->load->view(LANGUAGE.'/login');
 	}
+        
+        public function main(){
+                $this->load->view(LANGUAGE.'/header', $this->head_data);
+		$this->load->view(LANGUAGE.'/main');
+        }
 }
 ?>
