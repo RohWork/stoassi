@@ -74,3 +74,4 @@ if ( ! function_exists('add_querystring_var')) {
         }
     }
 }
+?>
