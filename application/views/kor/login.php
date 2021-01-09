@@ -36,7 +36,7 @@
                             <input type="text" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
                         </div>
                         <div class="col-xs-4">
-                            <button btn btn-lg btn-primary btn-block>LOGIN</button>
+                            <button class="btn btn-lg btn-primary btn-block">LOGIN</button>
                         </div>
 		</div>
 	</div>
