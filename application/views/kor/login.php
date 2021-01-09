@@ -18,30 +18,75 @@
         <link href="../../assets/css/sticky-footer-navbar.css" rel="stylesheet">
         <style>
             .login_button{
-                height:60px;
+                height:70px;
             }
         </style>
     </head>
     
     <body>
 	<div class="container">
-
-		<div class="row">
-			<div class="col-xs-4"></div>
-                        <div class="col-xs-4"><h3>로그인</h3></div>
-			<div class="col-xs-4"></div>
-		</div>
-                <div class="row">
-			<div class="col-xs-4"></div>
-                        <div class="col-xs-4">
-                            <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
-                            <input type="text" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
-                        </div>
+                
+                    <div class="row">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-5"><center><h3>로그인</h3></center></div>
+                        <div class="col-xs-3"></div>
+                    </div>
+                    <div class="row">                      
+                            <div class="col-xs-4"></div>
+                            <div class="col-xs-3">
+                                <form id="user_form" name="user_form" target="">
+                                    <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
+                                    <input type="password" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
+                                </form>
+                            </div>
                         <div class="col-xs-2">
-                            <button class="btn btn-lg btn-primary btn-block login_button">LOGIN</button>
+                            <button class="btn btn-lg btn-primary btn-block login_button" onclick="login_submit();">LOGIN</button>
                         </div>
-                        <div class="col-xs-2"></div>
-		</div>
+                        
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-5">
+                        <button class="btn btn-lg btn-success btn-block">JOIN</button>
+                    </div>
+                    <div class="col-xs-3"></div>
+                </div>
+
 	</div>
+        
+        <script>
+            function login_submit(){
+                
+                if($("#user_id").val() == "" || $("#user_pw").val() == ""){
+                
+                    if($("#user_id").val() == ""){
+                        alert("아이디를 입력해주세요.");
+                        $("#user_id").focus();
+                        return false;
+                    }
+                    if($("#user_pw").val() == ""){
+                        alert("비밀번호를 입력해주세요.");
+                        $("#user_pw").focus();
+                        return false;
+                    }
+                }else{
+
+                    $.ajax({
+                        url:'/main/login_process',
+                        type:'post',
+                        data:$('user_form').serialize(),
+                        success:function(data){
+                            alert(data.test);
+                        },
+                        error: function(xhr,status,error) {
+                            console.log(xhr,status,error);
+                            alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                            return false;
+                        }	 
+                    });
+                }
+            }
+        </script>
 </body>
 </html>
