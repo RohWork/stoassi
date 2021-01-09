@@ -17,7 +17,9 @@
         <!-- Custom styles for this template -->
         <link href="../../assets/css/sticky-footer-navbar.css" rel="stylesheet">
         <style>
-            
+            .login_button{
+                height:60px;
+            }
         </style>
     </head>
     
@@ -35,9 +37,10 @@
                             <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
                             <input type="text" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
                         </div>
-                        <div class="col-xs-4">
-                            <button class="btn btn-lg btn-primary btn-block">LOGIN</button>
+                        <div class="col-xs-2">
+                            <button class="btn btn-lg btn-primary btn-block login_button">LOGIN</button>
                         </div>
+                        <div class="col-xs-2"></div>
 		</div>
 	</div>
 </body>
