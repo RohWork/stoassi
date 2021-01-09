@@ -21,6 +21,11 @@ class Main extends CI_Controller {
         
         public function login_process()
         {
+            $user_id = $this->input->post("user_id");
+            $user_pw = $this->input->post("user_pw");
+            
+            
+            
             $data = array(
                 "test" => "test",
             );
