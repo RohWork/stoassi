@@ -35,7 +35,9 @@
                             <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
                             <input type="text" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
                         </div>
-			<div class="col-xs-4"></div>
+                        <div class="col-xs-4">
+                            <button btn btn-lg btn-primary btn-block>LOGIN</button>
+                        </div>
 		</div>
 	</div>
 </body>
