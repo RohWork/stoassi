@@ -32,8 +32,8 @@
                 <div class="row">
 			<div class="col-xs-4"></div>
                         <div class="col-xs-2">
-                            <label>아이디</label><br/>
-                            <label>비밀번호</label>
+                            <label class="form-control">아이디</label><br/>
+                            <label class="form-control">비밀번호</label>
                         </div>
                         <div class="col-xs-2">
                                 <input type="text" class="form-control"/>
