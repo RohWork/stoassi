@@ -31,13 +31,9 @@
 		</div>
                 <div class="row">
 			<div class="col-xs-4"></div>
-                        <div class="col-xs-2">
-                            <label class="form-control">아이디</label><br/>
-                            <label class="form-control">비밀번호</label>
-                        </div>
-                        <div class="col-xs-2">
-                                <input type="text" class="form-control"/>
-                                <input type="text" class="form-control"/>
+                        <div class="col-xs-4">
+                            <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
+                            <input type="text" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
                         </div>
 			<div class="col-xs-4"></div>
 		</div>
