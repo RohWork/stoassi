@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
@@ -28,29 +29,29 @@
                 
                     <div class="row">
                         <div class="col-xs-4"></div>
-                        <div class="col-xs-5"><center><h3>로그인</h3></center></div>
-                        <div class="col-xs-3"></div>
+                        <div class="col-xs-4"><center><h3>로그인</h3></center></div>
+                        <div class="col-xs-2"></div>
                     </div>
-                    <div class="row">                      
-                            <div class="col-xs-4"></div>
-                            <div class="col-xs-3">
-                                <form id="user_form" name="user_form" target="">
-                                    <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
-                                    <input type="password" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
-                                </form>
-                            </div>
-                        <div class="col-xs-2">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-5 col-xs-8">
+                            <form id="user_form" name="user_form" target="">
+                                <input type="text" id="user_id" name="user_id" placeholder="ID" class="form-control"/>
+                                <input type="password" id="user_pw" name="user_pw" placeholder="PASSWORD" class="form-control"/>
+                            </form>
+                        </div>
+                        <div class="col-md-3 col-xs-4">
                             <button class="btn btn-lg btn-primary btn-block login_button" onclick="login_submit();">LOGIN</button>
                         </div>
-                        
+                        <div class="col-md-2"></div>
                     </div>
                 </form>
                 <div class="row">
-                    <div class="col-xs-4"></div>
-                    <div class="col-xs-5">
-                        <button class="btn btn-lg btn-success btn-block">JOIN</button>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 col-xs-12">
+                        <button class="btn btn-lg btn-success btn-block" onclick="location.href='/member/join'">JOIN</button>
                     </div>
-                    <div class="col-xs-3"></div>
+                    <div class="col-md-2"></div>
                 </div>
 
 	</div>
@@ -75,7 +76,7 @@
                     $.ajax({
                         url:'/main/login_process',
                         type:'post',
-                        data:$('user_form').serialize(),
+                        data:$('#user_form').serialize(),
                         success:function(data){
                             alert(data.test);
                         },
