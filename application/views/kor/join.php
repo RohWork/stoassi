@@ -38,7 +38,11 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_id" class="col-md-2 hidden-xs hidden-sm control-label">USER ID</label>
-                        <div class="col-md-3 col-xs-8"><input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID"/></div>
+                        <div class="col-md-3 col-xs-8">
+                            <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID"/>
+                            <input type="hidden" id="confirm_id" name="confirm_id" class="form-control"/>
+                        
+                        </div>
                         <div class="col-md-2 col-xs-4"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
                         <div class="col-md-3"></div>
                     </div>    
@@ -120,6 +124,30 @@
         
         <script>
             
+            $(document).ready(function(){
+                
+                var category_html = "";
+                
+                $.ajax({
+                    url:'/member/get_shop_category',
+                    type:'post',
+                    success:function(data){
+                        data.forEach(function (item){
+                            category_html += "<option value="+item.idx+">"+item.name+"</option>";
+                        });
+                        
+                        $("#shop_category").append(category_html);
+                    },
+                    error: function(xhr,status,error) {
+                        console.log(xhr,status,error);
+                        alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                        return false;
+                    }	 
+                });
+                
+            });
+            
+            
             var user_id = new Array($("#user_id"), "아이디");
             var user_pw1 = new Array($("#user_pw1"), "비밀번호");
             var user_pw2 = new Array($("#user_pw2"), "비밀번호");
@@ -130,7 +158,7 @@
             var shop_name = new Array($("#shop_name"), "가게명");
             var shop_category = new Array($("#shop_category"), "가게타입");
             var shop_addr = new Array($("#shop_addr"), "가게주소");
-
+            var confirm_id = new Array($("#confirm_id"), "아이디확인");
             var params_array = new Array(
                                             user_id, 
                                             user_pw1, 
@@ -146,23 +174,58 @@
             
             function email_submit(){
                 
-                $("#email_confirm_div").show();
+                email_confirm[0].val("Y");
                 
             }
             
             
-            
+            function id_check(){
+                
+                if(user_id[0].val() == ""){
+                    alert(user_id[1]+"를 입력해주세요.");
+                    return false;
+                }else{
+                    
+                     $.ajax({
+                        url:'/member/check_id',
+                        type:'post',
+                        data:{user_id : user_id[0].val() },
+                        success:function(data){
+                            if(data.result){
+                                user_id[0].attr("disabled", true);
+                                confirm_id[0].val(user_id[0].val());
+                            }else{
+                                alert("중복된 계정입니다.");
+                            }
+                        },
+                        error: function(xhr,status,error) {
+                            console.log(xhr,status,error);
+                            alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                            return false;
+                        }	 
+                    });
+                    
+                }
+                
+            }
             
             function join_submit(){
                 
                 if( requre_params(params_array) ){
                     
+                    var form = $("#join_form");
+                    
                     $.ajax({
                         url:'/member/join_process',
                         type:'post',
-                        data:$('#join_form').serialize(),
+                        data: form.serialize(),
                         success:function(data){
-                            alert(data.test);
+                            if(data.result == true){
+                                alert(data.message);
+                                location.href="/";
+                            }else{
+                                alert(data.message);
+                            }
                         },
                         error: function(xhr,status,error) {
                             console.log(xhr,status,error);
@@ -188,7 +251,13 @@
                     user_pw1[0].focus();
                     return false;
                 }
+                if(!user_id[0].attr("disabled")){
+                    alert("아이디 중복체크를 진행해주세요.");
+                    user_id[0].focus();
+                    return false;
+                }
                 
+                return true;
             }
             
         </script>
