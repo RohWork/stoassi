@@ -7,7 +7,7 @@ class Member_model extends CI_Model {
     }
     
     function get_member_info($user_id,$user_pw){
-        $this->db->select('idx');
+        $this->db->select('*');
         $this->db->from('member_info');
         $this->db->where('id', $user_id);
         $this->db->where('pwd', $user_pw);
