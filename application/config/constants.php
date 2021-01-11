@@ -93,5 +93,6 @@ for($i='A'; $i!= 'AA'; $i++){
 for($j=1;$j<10;$j++){
 	array_push($code_arr,$j);	
 }
-
-define('CATEGORY_CODE', $code_arr);
+if($_SERVER['HTTP_HOST'] != "stoassi.co.kr"){
+    define('CATEGORY_CODE', $code_arr);
+}
