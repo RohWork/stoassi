@@ -34,7 +34,7 @@ class Main extends CI_Controller {
             }else{
                 
                 $session_data = array(    //로그인 성공시 session 생성
-                                    'user_idx'      => $result['user_idx'],
+                                    'user_idx'      => $result['idx'],
 			            'user_id'       => $result['id'],
 			            'user_name'     => $result['name'],
 			       );
