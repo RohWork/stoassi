@@ -78,7 +78,11 @@
                         type:'post',
                         data:$('#user_form').serialize(),
                         success:function(data){
-                            alert(data.test);
+                            if(data.result){
+                                location.href='/main/main_info'
+                            }else{
+                                alert(data.message);
+                            }
                         },
                         error: function(xhr,status,error) {
                             console.log(xhr,status,error);
