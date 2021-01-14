@@ -36,15 +36,15 @@
             <li <?=$main?>><a href="/">Home</a></li>
 			
             <li class="dropdown">
-				<a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">
-					재고관리<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu" role="menu" class="active">
-					<li <?=$stock_list?>><a href="/Stock/list">재고리스트관리</a></li>
-					<li <?=$stock_category?>><a href="/StockCategory/list">재고타입관리</a></li>
-					<li <?=$stock_seller?>><a href="/StockSeller/list">재고업체관리</a></li>
-				</ul>
-			</li>
+                <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">
+                        재고관리<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" class="active">
+                        <li <?=$stock_list?>><a href="/Stock/list">재고리스트관리</a></li>
+                        <li <?=$stock_category?>><a href="/StockCategory/list">재고타입관리</a></li>
+                        <li <?=$stock_seller?>><a href="/StockSeller/list">재고업체관리</a></li>
+                </ul>
+            </li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -66,9 +66,14 @@
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#"><?=$this->session->userdata("user_name")?></a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
