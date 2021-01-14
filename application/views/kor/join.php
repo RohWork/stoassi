@@ -39,7 +39,7 @@
                         <div class="col-md-3"></div>
                         <label for="user_id" class="col-md-2 hidden-xs hidden-sm control-label">USER ID</label>
                         <div class="col-md-3 col-xs-8">
-                            <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID" />
+                            <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID" onkeypress="input_change(this)"/>
                             <input type="hidden" id="confirm_id" name="confirm_id" class="form-control"/>
                         </div>
                         <div class="col-md-2 col-xs-4"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
@@ -48,31 +48,31 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_pw1" class="col-md-2 hidden-xs hidden-sm control-label">PASSWORD1</label>
-                        <div class="col-md-3 col-xs-12"><input type="password" id="user_pw1" name="user_pw1" class="form-control" placeholder="PASSWORD1" /></div>
+                        <div class="col-md-3 col-xs-12"><input type="password" id="user_pw1" name="user_pw1" class="form-control" placeholder="PASSWORD1" onkeypress="input_change(this)"/></div>
                         <div class="col-md-3"></div>
                     </div>    
                     <div class="row  form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_pw2" class="col-md-2 hidden-xs hidden-sm control-label">PASSWORD2</label>
-                        <div class="col-md-3 col-xs-12"><input type="password" id="user_pw2" name="user_pw2" class="form-control" placeholder="PASSWORD2"/></div>
+                        <div class="col-md-3 col-xs-12"><input type="password" id="user_pw2" name="user_pw2" class="form-control" placeholder="PASSWORD2" onkeypress="input_change(this)"/></div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_name" class="col-md-2 hidden-xs hidden-sm control-label">이름</label>
-                        <div class="col-md-3 col-xs-12"><input type="text" id="user_name" name="user_name" class="form-control" placeholder="이름"/></div>
+                        <div class="col-md-3 col-xs-12"><input type="text" id="user_name" name="user_name" class="form-control" placeholder="이름" onkeypress="input_change(this)"/></div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_tel" class="col-md-2  hidden-xs hidden-sm control-label">연락처</label>
-                        <div class="col-md-3 col-xs-12"><input type="tel" id="user_tel" name="user_tel" class="form-control"  placeholder="연락처" pattern="^\d{4}-\d{3}-\d{4}$"></div>
+                        <div class="col-md-3 col-xs-12"><input type="tel" id="user_tel" name="user_tel" class="form-control"  placeholder="연락처" pattern="^\d{4}-\d{3}-\d{4}$" onkeypress="input_change(this)"></div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_email" class="col-md-2 hidden-xs hidden-sm control-label">이메일주소</label>
-                        <div class="col-md-3 col-xs-9"><input type="text" id="user_email" name="user_email" class="form-control" placeholder="이메일주소"/></div>
+                        <div class="col-md-3 col-xs-9"><input type="text" id="user_email" name="user_email" class="form-control" placeholder="이메일주소" onkeypress="input_change(this)"></div>
                         <div class="col-md-2 col-xs-3"><!--<button type="button" class="btn btn-mini btn-primary btn-block" onclick="email_submit();">인증</button>--></div>
                         <div class="col-md-3"></div>
                     </div>
@@ -89,7 +89,7 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="shop_name" class="col-md-2 hidden-xs hidden-sm control-label">가게명</label>
-                        <div class="col-md-3 col-xs-12"><input type="text" id="shop_name" name="shop_name" class="form-control" placeholder="가게명"/></div>
+                        <div class="col-md-3 col-xs-12"><input type="text" id="shop_name" name="shop_name" class="form-control" placeholder="가게명" onkeypress="input_change(this)"/></div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row form-group">    
@@ -105,7 +105,7 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="shop_addr" class="col-md-2 hidden-xs hidden-sm control-label">가게주소</label>
-                        <div class="col-md-3 col-xs-12"><input type="text" id="shop_addr" name="shop_addr" class="form-control" placeholder="가게주소"/></div>
+                        <div class="col-md-3 col-xs-12"><input type="text" id="shop_addr" name="shop_addr" class="form-control" placeholder="가게주소" onkeypress="input_change(this)"/></div>
                         <div class="col-md-3"></div>
                     </div>
                 </form>
@@ -245,7 +245,7 @@
                 for(var i=0; i<params.length; i++){
                     if(params[i][0].val() == ""){
                         alert(params[i][1]+" 을(를) 확인해주세요.");
-                        params[i][0].attr("class","form-control alert-success");
+                        params[i][0].attr("class","form-control alert-danger");
                         params[i][0].focus();
                         return false;
                     }
@@ -258,18 +258,22 @@
                 if(user_pw1[0].val() != user_pw2[0].val()){
                     alert("비밀번호가 서로 다릅니다");
                     user_pw1[0].focus();
+                    user_pw1[0].attr("class","form-control alert-danger");
                     return false;
                 }else if( user_pw1[0].val().length < 8 || user_pw1[0].val().length > 20){
                     alert("비밀번호는 8~20자리 이내로 입력해주세요");
                     user_pw1[0].focus();
+                    user_pw1[0].attr("class","form-control alert-danger");
                     return false;
                 }else if (user_pw1[0].val().search(/\s/) != -1){
                     alert("비밀번호는 공백 없이 입력해주세요.");
                     user_pw1[0].focus();
+                    user_pw1[0].attr("class","form-control alert-danger");
                     return false;
                 }else if(num < 0 || eng < 0 || spe < 0){
                     alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
                     user_pw1[0].focus();
+                    user_pw1[0].attr("class","form-control alert-danger");
                     return false;
                 }
                 
@@ -277,10 +281,15 @@
                 if(!user_id[0].attr("disabled")){
                     alert("아이디 중복체크를 진행해주세요.");
                     user_id[0].focus();
+                    user_id[0].attr("class","form-control alert-danger");
                     return false;
                 }
                 
                 return true;
+            }
+            
+            function input_change(input){
+                $(input).attr("class", "form-control");
             }
             
         </script>
