@@ -74,9 +74,10 @@
                         <div class="col-md-3"></div>
                         <label for="user_email" class="col-md-2 hidden-xs hidden-sm control-label">이메일주소</label>
                         <div class="col-md-3 col-xs-9"><input type="text" id="user_email" name="user_email" class="form-control" placeholder="이메일주소"/></div>
-                        <div class="col-md-2 col-xs-3"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="email_submit();">인증</button></div>
+                        <div class="col-md-2 col-xs-3"><!--<button type="button" class="btn btn-mini btn-primary btn-block" onclick="email_submit();">인증</button>--></div>
                         <div class="col-md-3"></div>
                     </div>
+                    <!--
                     <div class="row form-group" id="email_confirm_div"  style="display: none">    
                         <div class="col-md-3"></div>
                         <label for="user_email" class="col-md-2 hidden-xs hidden-sm control-label">코드확인</label>
@@ -84,6 +85,7 @@
                         <div class="col-md-2 col-xs-3"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="code_check();">확인</button></div>
                         <div class="col-md-3"></div>
                     </div>
+                    -->
                     <hr/>
                     <div class="row  form-group">    
                         <div class="col-md-3"></div>
@@ -154,7 +156,7 @@
             var user_name = new Array($("#user_name"), "이름");
             var user_tel = new Array($("#user_tel"), "연락처");
             var user_email = new Array($("#user_email"), "이메일주소");
-            var email_confirm = new Array($("#email_confirm"), "이메일인증");
+            //var email_confirm = new Array($("#email_confirm"), "이메일인증");
             var shop_name = new Array($("#shop_name"), "가게명");
             var shop_category = new Array($("#shop_category"), "가게타입");
             var shop_addr = new Array($("#shop_addr"), "가게주소");
@@ -166,7 +168,7 @@
                                             user_name, 
                                             user_tel, 
                                             user_email, 
-                                            email_confirm,
+                                           // email_confirm,
                                             shop_name, 
                                             shop_category, 
                                             shop_addr
