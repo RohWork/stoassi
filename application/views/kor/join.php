@@ -197,12 +197,12 @@
                             if(data.result){
                                 user_id[0].attr("disabled", true);
                                 confirm_id[0].val(user_id[0].val());
-                                $("#id_group").attr("class","col-md-3 col-xs-8 has-success has-feedback");
+                                $("#id_group").attr("class","has-success has-feedback");
                                 $("#err_msg").hide();
                                 $("#ok_msg").show();
                             }else{
                                 alert("중복된 계정입니다.");
-                                $("#id_group").attr("class","col-md-3 col-xs-8 has-error has-feedback");
+                                $("#id_group").attr("class","has-error has-feedback");
                                 $("#err_msg").show();
                             }
                         },
