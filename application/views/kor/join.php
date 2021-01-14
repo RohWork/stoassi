@@ -38,10 +38,8 @@
                     <div class="row form-group" id="id_group">
                         <div class="col-md-3"></div>
                         <label for="user_id" class="col-md-2 hidden-xs hidden-sm control-label">USER ID</label>
-                        <div class="col-md-3 col-xs-8" >
+                        <div class="col-md-3 col-xs-8">
                             <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID" />
-                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="ok_msg" style="display: none"></span>
-                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" id="err_msg" style="display: none"></span>
                             <input type="hidden" id="confirm_id" name="confirm_id" class="form-control"/>
                         </div>
                         <div class="col-md-2 col-xs-4"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
@@ -50,7 +48,7 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_pw1" class="col-md-2 hidden-xs hidden-sm control-label">PASSWORD1</label>
-                        <div class="col-md-3 col-xs-12"><input type="password" id="user_pw1" name="user_pw1" class="form-control" placeholder="PASSWORD1"/></div>
+                        <div class="col-md-3 col-xs-12"><input type="password" id="user_pw1" name="user_pw1" class="form-control" placeholder="PASSWORD1" /></div>
                         <div class="col-md-3"></div>
                     </div>    
                     <div class="row  form-group">    
@@ -88,13 +86,13 @@
                     </div>
                     -->
                     <hr/>
-                    <div class="row  form-group">    
+                    <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="shop_name" class="col-md-2 hidden-xs hidden-sm control-label">가게명</label>
                         <div class="col-md-3 col-xs-12"><input type="text" id="shop_name" name="shop_name" class="form-control" placeholder="가게명"/></div>
                         <div class="col-md-3"></div>
                     </div>
-                    <div class="row  form-group">    
+                    <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="shop_category" class="col-md-2 hidden-xs hidden-sm  control-label" >가게타입</label>
                         <div class="col-md-3 col-xs-12">
@@ -197,13 +195,10 @@
                             if(data.result){
                                 user_id[0].attr("disabled", true);
                                 confirm_id[0].val(user_id[0].val());
-                                $("#id_group").attr("class","row form-group has-success has-feedback");
-                                $("#err_msg").hide();
-                                $("#ok_msg").show();
+                                $("#user_id").attr("class","form-control alert-success");
                             }else{
                                 alert("중복된 계정입니다.");
-                                $("#id_group").attr("class","row form-group has-error has-feedback");
-                                $("#err_msg").show();
+                                $("#user_id").attr("class","form-control alert-danger");
                             }
                         },
                         error: function(xhr,status,error) {
@@ -250,6 +245,7 @@
                 for(var i=0; i<params.length; i++){
                     if(params[i][0].val() == ""){
                         alert(params[i][1]+" 을(를) 확인해주세요.");
+                        params[i][0].attr("class","form-control alert-success");
                         params[i][0].focus();
                         return false;
                     }
