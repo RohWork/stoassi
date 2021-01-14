@@ -38,7 +38,7 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_id" class="col-md-2 hidden-xs hidden-sm control-label">USER ID</label>
-                        <div class="col-md-3 col-xs-8 form-group" id="id_group">
+                        <div class="col-md-3 col-xs-8 input-group" id="id_group">
                             <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID" />
                             <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="ok_msg" style="display: none"></span>
                             <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" id="err_msg" style="display: none"></span>
