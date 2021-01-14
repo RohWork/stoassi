@@ -67,7 +67,7 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_tel" class="col-md-2  hidden-xs hidden-sm control-label">연락처</label>
-                        <div class="col-md-3 col-xs-12"><input type="tel" id="user_tel" name="user_tel" class="form-control" placeholder="연락처"/></div>
+                        <div class="col-md-3 col-xs-12"><input type="tel" id="user_tel" name="user_tel" class="form-control onlyNumber"  placeholder="연락처" pattern="^\d{4}-\d{3}-\d{4}$"></div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row form-group">    
@@ -248,11 +248,30 @@
                         return false;
                     }
                 }
+                
+                var num = user_pw1[0].val().search(/[0-9]/g);
+                var eng = user_pw1[0].val().search(/[a-z]/ig);
+                var spe = user_pw1[0].val().search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+                
                 if(user_pw1[0].val() != user_pw2[0].val()){
                     alert("비밀번호가 서로 다릅니다");
                     user_pw1[0].focus();
                     return false;
+                }else if( user_pw1[0].val().length < 8 || user_pw1[0].val().length > 20){
+                    alert("비밀번호는 8~20자리 이내로 입력해주세요");
+                    user_pw1[0].focus();
+                    return false;
+                }else if (user_pw1[0].val().search(/\s/) != -1){
+                    alert("비밀번호는 공백 없이 입력해주세요.");
+                    user_pw1[0].focus();
+                    return false;
+                }else if(num < 0 || eng < 0 || spe < 0){
+                    alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                    user_pw1[0].focus();
+                    return false;
                 }
+                
+                
                 if(!user_id[0].attr("disabled")){
                     alert("아이디 중복체크를 진행해주세요.");
                     user_id[0].focus();
