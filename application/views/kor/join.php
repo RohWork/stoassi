@@ -38,11 +38,13 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_id" class="col-md-2 hidden-xs hidden-sm control-label">USER ID</label>
-                        <div class="col-md-3 col-xs-8">
-                            <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID"/>
+                        <div class="col-md-3 col-xs-8 input-group" id="id_group">
+                            <input type="text" id="user_id" name="user_id" class="form-control" placeholder="USER ID" />
+                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="ok_msg" style="display: none"></span>
+                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" id="err_msg" style="display: none"></span>
                             <input type="hidden" id="confirm_id" name="confirm_id" class="form-control"/>
-                        
-                        </div>
+
+                            </div>
                         <div class="col-md-2 col-xs-4"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
                         <div class="col-md-3"></div>
                     </div>    
@@ -67,7 +69,7 @@
                     <div class="row form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_tel" class="col-md-2  hidden-xs hidden-sm control-label">연락처</label>
-                        <div class="col-md-3 col-xs-12"><input type="tel" id="user_tel" name="user_tel" class="form-control onlyNumber"  placeholder="연락처" pattern="^\d{4}-\d{3}-\d{4}$"></div>
+                        <div class="col-md-3 col-xs-12"><input type="tel" id="user_tel" name="user_tel" class="form-control"  placeholder="연락처" pattern="^\d{4}-\d{3}-\d{4}$"></div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row form-group">    
@@ -196,8 +198,13 @@
                             if(data.result){
                                 user_id[0].attr("disabled", true);
                                 confirm_id[0].val(user_id[0].val());
+                                $("#id_group").attr("class","col-md-3 col-xs-8 has-success has-feedback");
+                                $("#err_msg").hide();
+                                $("#ok_msg").show();
                             }else{
                                 alert("중복된 계정입니다.");
+                                $("#id_group").attr("class","col-md-3 col-xs-8 has-error has-feedback");
+                                $("#err_msg").show();
                             }
                         },
                         error: function(xhr,status,error) {
