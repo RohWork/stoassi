@@ -17,8 +17,6 @@ class Log {
        
         $CI =& get_instance();
 
-        $CI->load->library('session');
-
         $CI->load->helper('url');
        
 
