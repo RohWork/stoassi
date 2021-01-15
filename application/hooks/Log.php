@@ -16,9 +16,8 @@ class Log {
     function checkPermission(){
        
         $CI =& get_instance();
-        
-        echo $this->session_userdata('user_id');
-        #$CI->load->library('session');
+
+        $CI->load->library('session');
 
         $CI->load->helper('url');
        
