@@ -6,11 +6,14 @@ class StockCategory extends CI_Controller {
 	public function __construct() {
 		
 		parent ::__construct();
-		
+		$this->allow=array();
+                
 		$this->load->model('Stock_model', 'stock_md', TRUE);
 		
 		$this->head_data = array(
 			"main"	=> "",
+                        "stock" => "active",
+                        "stock_drop" => "show",
 			"stock_list" => "",
 			"stock_category" => "class='active'",
 			"stock_seller" => "",
@@ -19,7 +22,7 @@ class StockCategory extends CI_Controller {
 		
 	}
 	
-	public function list(){
+	public function category_list(){
 		
 		$this->load->library('pagination');
 

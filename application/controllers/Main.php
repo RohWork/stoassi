@@ -5,15 +5,20 @@ class Main extends CI_Controller {
 	
 	function __construct() {
 		parent ::__construct();
-		
+
+                $this->allow=array('index', 'login_process');
+                 
 		$this->head_data = array(
 			"main"	=> "class='active'",
+                        "stock" => "",
+                        "stock_drop" => "",
 			"stock_list" => "",
 			"stock_category" => "",
 			"stock_seller" => "",
 		);
                 
                 $this->load->model('Member_model', 'member_md', TRUE);
+               
 	}
 	
 	public function index()
@@ -54,7 +59,11 @@ class Main extends CI_Controller {
             echo json_encode($data);
         }
         
+        
+        
         public function main_info(){
+                
+            
                 $this->load->view(LANGUAGE.'/header', $this->head_data);
 		$this->load->view(LANGUAGE.'/main');
         }
