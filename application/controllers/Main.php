@@ -31,6 +31,10 @@ class Main extends CI_Controller {
             $user_id = $this->input->post("user_id");
             $user_pw = base64_encode(hash('sha512',$this->input->post("user_pw"),true));
             
+            
+            echo $user_id;
+            echo $user_pw;
+            exit;
             $result = $this->member_md->get_member_info($user_id, $user_pw);
             
             
