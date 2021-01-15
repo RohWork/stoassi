@@ -27,6 +27,7 @@ class Log {
             {
                 
                 echo "test";
+                exit;
                 //redirect('/main'); // 로그인창으로 강제 이동
                 //show_error("로그인이 필요합니다.", "로그인 오류");
             }
