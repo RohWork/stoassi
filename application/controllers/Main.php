@@ -49,6 +49,7 @@ class Main extends CI_Controller {
 
                 $this->session->set_userdata($session_data);	//session 등록
                 session_commit();
+                
                 $message = "";
             }
             
