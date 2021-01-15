@@ -32,9 +32,8 @@ class Main extends CI_Controller {
             $user_pw = base64_encode(hash('sha512',$this->input->post("user_pw"),true));
             
             
-            echo $user_id;
-            echo $user_pw;
-            exit;
+
+            
             $result = $this->member_md->get_member_info($user_id, $user_pw);
             
             
@@ -53,6 +52,9 @@ class Main extends CI_Controller {
                 
                 $message = "";
             }
+            
+            $message = $user_id."/".$user_pw;
+            var_dump($result);
             
             $data = array(
                 "result" => $result,
