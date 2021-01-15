@@ -1,28 +1,17 @@
 <?php
-class Log {
+class Log extends CI_Controller{
     
-    private $CI;
-    
-    function __construct()
-    {
-        $this->CI =& get_instance();
-        
-         
-        if(!isset($this->CI->session)){  
-              $this->CI->load->library('session');  
-        }
-    }
+
     
     function checkPermission(){
        
-        $CI =& get_instance();
 
-        $CI->load->helper('url');
+        $this->load->helper('url');
        
-        if(isset($CI->allow) && (is_array($CI->allow) === false OR in_array($CI->router->method, $CI->allow) === false))
+        if(isset($this->allow) && (is_array($this->allow) === false OR in_array($this->router->method, $this->allow) === false))
         {
 
-            if (!$CI->session->userdata('user_id')) // 로그인 여부를 세션을 이용해 체크한다.
+            if (!$this->session->userdata('user_id')) // 로그인 여부를 세션을 이용해 체크한다.
             {
                 
                 echo "test";
