@@ -49,7 +49,7 @@ class Main extends CI_Controller {
 
                 $this->session->set_userdata($session_data);	//session 등록
                 
-                echo $this->session->user_data('user_id');
+                echo $this->session->userdata('user_id');
                 $message = "";
             }
             
