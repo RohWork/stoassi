@@ -17,7 +17,7 @@ class Log {
        
         $CI =& get_instance();
 
-        $CI->load->library('session');
+        //$CI->load->library('session');
 
         $CI->load->helper('url');
        
@@ -26,6 +26,7 @@ class Log {
             if (!$CI->session->userdata('user_id')) // 로그인 여부를 세션을 이용해 체크한다.
             {
                 echo "test";
+                exit;
                 //redirect('/main'); // 로그인창으로 강제 이동
                 //show_error("로그인이 필요합니다.", "로그인 오류");
             }
