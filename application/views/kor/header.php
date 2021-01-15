@@ -33,16 +33,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li <?=$main?>><a href="/">Home</a></li>
+            <li <?=$main?>><a href="/main/main_info">Home</a></li>
 			
-            <li class="dropdown">
+            <li class="dropdown <?=$stock?> ">
                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">
                         재고관리<span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu" role="menu" class="active">
-                        <li <?=$stock_list?>><a href="/Stock/list">재고리스트관리</a></li>
-                        <li <?=$stock_category?>><a href="/StockCategory/list">재고타입관리</a></li>
-                        <li <?=$stock_seller?>><a href="/StockSeller/list">재고업체관리</a></li>
+                <ul class="dropdown-menu <?=$stock_drop?>" role="menu">
+                        <li <?=$stock_list?>><a href="/Stock/stock_list">재고리스트관리</a></li>
+                        <li <?=$stock_category?>><a href="/StockCategory/category_list">재고타입관리</a></li>
+                        <li <?=$stock_seller?>><a href="/StockSeller/seller_list">재고업체관리</a></li>
                 </ul>
             </li>
             <li><a href="#contact">Contact</a></li>
@@ -67,11 +67,11 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?=$this->session->userdata("user_name")?> <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="#"><?=$this->session->userdata("user_name")?></a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
+                  <li><a href="#">내정보</a></li>
+                  <li><a href="#">메시지확인</a></li>
+                  <li><a href="#">로그아웃</a></li>
                 </ul>
             </li>
           </ul>
