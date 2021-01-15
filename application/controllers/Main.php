@@ -62,7 +62,6 @@ class Main extends CI_Controller {
         
         
         public function main_info(){
-                
                 $this->load->view(LANGUAGE.'/header', $this->head_data);
 		$this->load->view(LANGUAGE.'/main');
         }
