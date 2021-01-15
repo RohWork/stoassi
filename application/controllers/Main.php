@@ -49,12 +49,9 @@ class Main extends CI_Controller {
 
                 $this->session->set_userdata($session_data);	//session 등록
                 
-                
+                echo $this->session->user_data('user_id');
                 $message = "";
             }
-            
-            $message = $user_id."/".$user_pw;
-            var_dump($result);
             
             $data = array(
                 "result" => $result,
