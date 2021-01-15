@@ -19,7 +19,6 @@ class Log {
 
         $CI->load->helper('url');
        
-
         if(isset($CI->allow) && (is_array($CI->allow) === false OR in_array($CI->router->method, $CI->allow) === false))
         {
 
