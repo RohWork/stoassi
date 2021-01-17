@@ -71,8 +71,7 @@ class Main extends CI_Controller {
                 $this->load->helper('alert');
  		$this->session->sess_destroy();
 
- 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
- 		alert('로그아웃 되었습니다', '/');
+ 		redirect('/', 'refresh');
             
         }
 }   
