@@ -50,15 +50,15 @@
                             <label for="user_pw1" class="col-md-2 hidden-xs hidden-sm control-label">PASSWORD1</label>
                         <div class="col-md-3 col-xs-12"><input type="password" id="user_pw1" name="user_pw1" class="form-control" placeholder="PASSWORD1" onkeypress="input_change(this)"/></div>
                         <div class="col-md-3">
-                            <label for="user_pw1" class="col-md-2 hidden-xs hidden-sm control-label">비밀번호는 영문,숫자, 특수문자를 혼합하여 8자이상으로 입력해주세요.</label>
+                            <label for="user_pw1" class="hidden-xs hidden-sm control-label">비밀번호는 영문,숫자, 특수문자를 혼합하여 8자이상으로 입력해주세요.</label>
                         </div>
                     </div>    
                     <div class="row  form-group">    
                         <div class="col-md-3"></div>
                         <label for="user_pw2" class="col-md-2 hidden-xs hidden-sm control-label">PASSWORD2</label>
                         <div class="col-md-3 col-xs-12"><input type="password" id="user_pw2" name="user_pw2" class="form-control" placeholder="PASSWORD2" onkeypress="input_change(this)"/></div>
-                        <div class="col-md-3">3
-                            <label for="user_pw1" class="col-md-2 hidden-xs hidden-sm control-label">비밀번호는 영문,숫자, 특수문자를 혼합하여 8자이상으로 입력해주세요.</label>
+                        <div class="col-md-3">
+                            <label for="user_pw1" class="hidden-xs hidden-sm control-label">비밀번호는 영문,숫자, 특수문자를 혼합하여 8자이상으로 입력해주세요.</label>
                         </div>
                     </div>
                     <div class="row form-group">    
