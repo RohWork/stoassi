@@ -71,7 +71,7 @@
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="#">내정보</a></li>
                   <li><a href="#">메시지확인</a></li>
-                  <li><a href="#">로그아웃</a></li>
+                  <li><a href="/main/logout">로그아웃</a></li>
                 </ul>
             </li>
           </ul>
