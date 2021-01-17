@@ -31,9 +31,6 @@ class Main extends CI_Controller {
             $user_id = $this->input->post("user_id");
             $user_pw = base64_encode(hash('sha512',$this->input->post("user_pw"),true));
             
-            
-
-            
             $result = $this->member_md->get_member_info($user_id, $user_pw);
             
             
@@ -68,5 +65,15 @@ class Main extends CI_Controller {
                 $this->load->view(LANGUAGE.'/header', $this->head_data);
 		$this->load->view(LANGUAGE.'/main');
         }
-}
+       
+        public function login_out()
+        {
+                $this->load->helper('alert');
+ 		$this->session->sess_destroy();
+
+ 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+ 		alert('로그아웃 되었습니다', '/');
+            
+        }
+}   
 ?>
