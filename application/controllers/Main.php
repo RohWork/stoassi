@@ -66,7 +66,7 @@ class Main extends CI_Controller {
 		$this->load->view(LANGUAGE.'/main');
         }
        
-        public function login_out()
+        public function loginout()
         {
                 $this->load->helper('alert');
  		$this->session->sess_destroy();
