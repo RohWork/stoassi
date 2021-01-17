@@ -68,7 +68,6 @@ class Main extends CI_Controller {
        
         public function logout()
         {
-                $this->load->helper('alert');
  		$this->session->sess_destroy();
 
  		redirect('/', 'refresh');
