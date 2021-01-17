@@ -27,7 +27,7 @@ class Log extends CI_Controller{
                 
 
                 //redirect('/main'); // 로그인창으로 강제 이동
-                show_error("로그인이 필요합니다.<br/><a href='/'>이동하기</a>", "로그인 오류");
+                show_error("로그인이 필요합니다.<br/><a href='/'>이동하기</a>", "로그인 오류", "Session Error");
             }
         }
     }
