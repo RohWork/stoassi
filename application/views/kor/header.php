@@ -39,7 +39,7 @@
                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">
                         재고관리<span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu <?=$stock_drop?>" role="menu">
+                <ul class="dropdown-menu" role="menu">
                         <li <?=$stock_list?>><a href="/Stock/stock_list">재고리스트관리</a></li>
                         <li <?=$stock_category?>><a href="/StockCategory/category_list">재고타입관리</a></li>
                         <li <?=$stock_seller?>><a href="/StockSeller/seller_list">재고업체관리</a></li>
