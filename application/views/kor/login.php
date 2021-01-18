@@ -92,6 +92,15 @@
                     });
                 }
             }
+        $(document).ready(function(){    
+            $("#user_pw").keydown(function (key) {
+
+                if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+                    login_submit();
+                }
+
+            });
+        });
         </script>
 </body>
 </html>
