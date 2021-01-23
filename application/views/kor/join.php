@@ -281,7 +281,7 @@
                 }
                 
                 
-                if(!user_id[0].attr("disabled")){
+                if(confirm_id.val() == ""){
                     alert("아이디 중복체크를 진행해주세요.");
                     user_id[0].focus();
                     user_id[0].attr("class","form-control alert-danger");
