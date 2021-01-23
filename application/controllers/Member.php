@@ -52,14 +52,19 @@ class Member extends CI_Controller {
             
             $result = false;
             $data = array();
-            $user_id = $this->input->post("confirm_idx");
+            $confirm_id = $this->input->post("confirm_id");
+            $user_id = $this->input->post("user_id");
+            
+            
             
             $cnt = $this->member_md->count_member_id($user_id);
             
             
             
             if($cnt > 1){
-                $data["message"]= "중복된 ID 입니다";
+                $data["message"]= "중복된 ID 입니다.";
+            }else if ($confirm_id != $user_id){
+                $data["message"]= "중복체크되지 않은 ID입니다.";
             }else{
             
                 $member_params = array(
