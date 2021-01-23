@@ -197,7 +197,6 @@
                         data:{user_id : user_id[0].val() },
                         success:function(data){
                             if(data.result){
-                                user_id[0].attr("disabled", true);
                                 confirm_id[0].val(user_id[0].val());
                                 $("#user_id").attr("class","form-control alert-success");
                             }else{
