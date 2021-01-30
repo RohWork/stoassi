@@ -9,6 +9,8 @@ class Member extends CI_Controller {
                     "stock_list" => "",
                     "stock_category" => "",
                     "stock_seller" => "",
+                    "stock" => "active",
+                    "stock_drop" => "show",
             );
 
             $this->load->model('Member_model', 'member_md', TRUE);
