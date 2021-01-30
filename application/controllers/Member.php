@@ -32,10 +32,12 @@ class Member extends CI_Controller {
             
             $user_id = $this->input->post("user_id");
             $result = false;
-            $params =  array("user_id" => $user_id);
+            $search_vo  = new stdClass();
+            
+            $search_vo->user_id =  $user_id;
             
             
-            $cnt = $this->member_md->count_member_list($params);
+            $cnt = $this->member_md->count_member_list($search_vo);
             
             
             if($cnt < 1){
@@ -57,9 +59,11 @@ class Member extends CI_Controller {
             $confirm_id = $this->input->post("confirm_id");
             $user_id = $this->input->post("user_id");
             
-            $params = array("user_id" => $user_id);
+            $search_vo  = new stdClass();
             
-            $cnt = $this->member_md->count_member_list($params);
+            $search_vo->user_id =  $user_id;
+            
+            $cnt = $this->member_md->count_member_list($search_vo);
             
             
             
