@@ -20,8 +20,10 @@ class Member_model extends CI_Model {
         $this->db->select('idx');
         $this->db->from('member_info');
         
-        if(!empty($params['user_id'])){
-            $this->db->where('id', $params['user_id']);
+        if(gettype($params) == "array"){
+            if(!empty($params['user_id'])){
+                $this->db->where('id', $params['user_id']);
+            }
         }
         
         return $this->db->count_all_results();
