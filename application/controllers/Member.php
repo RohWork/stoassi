@@ -32,8 +32,10 @@ class Member extends CI_Controller {
             
             $user_id = $this->input->post("user_id");
             $result = false;
+            $params =  array("user_id" => $user_id);
             
-            $cnt = $this->member_md->count_member_id($user_id);
+            
+            $cnt = $this->member_md->count_member_id($params);
             
             
             if($cnt < 1){
