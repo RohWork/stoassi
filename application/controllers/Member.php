@@ -122,7 +122,7 @@ class Member extends CI_Controller {
 		$config['base_url'] = current_url() . '?' . reset_GET('per_page');
 		
 		$search_vo->config_per_page = $config['per_page'];
-		$config['total_rows'] = $this->stock_md->count_member_list($search_vo);
+		$config['total_rows'] = $this->member_md->count_member_list($search_vo);
 
 		$config = setPagination($config);
 		$this->pagination->initialize($config);
