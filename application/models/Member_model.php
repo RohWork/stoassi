@@ -20,7 +20,7 @@ class Member_model extends CI_Model {
         $this->db->select('idx');
         $this->db->from('member_info');
         
-        if($params['user_id']){
+        if(!empty($params['user_id'])){
             $this->db->where('id', $params['user_id']);
         }
         
@@ -35,7 +35,7 @@ class Member_model extends CI_Model {
         $this->db->join('shop_info as si', 'mi.shop_idx = si.idx', 'left');
         $this->db->join('shop_category as sc', 'si.category_idx = sc.idx', 'left');
         
-        if($params['user_id']){
+        if(!empty($params['user_id'])){
             $this->db->where('mi.id', $params['user_id']);
         }
         
