@@ -9,7 +9,7 @@ class Member extends CI_Controller {
                     "stock_list" => "",
                     "stock_category" => "",
                     "stock_seller" => "",
-                    "stock" => "active",
+                    "stock" => "",
                     "stock_drop" => "show",
             );
 
