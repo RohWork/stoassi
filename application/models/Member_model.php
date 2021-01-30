@@ -40,7 +40,7 @@ class Member_model extends CI_Model {
         $this->db->order_by("mi.idx", "desc");
         $this->db->limit($search_vo->config_per_page, $offset);
         
-        return $this->db->result();
+        return $this->db->get()->result();
     }
     function set_member($data){
         
