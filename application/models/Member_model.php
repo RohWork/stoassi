@@ -15,11 +15,14 @@ class Member_model extends CI_Model {
         return $this->db->get()->row_array();
     }
     
-    function count_member_id($user_id){
+    function count_member_list($params){
         
         $this->db->select('idx');
         $this->db->from('member_info');
-        $this->db->where('id', $user_id);
+        
+        if($params['user_id']){
+            $this->db->where('id', $user_id);
+        }
         
         return $this->db->count_all_results();
     }
@@ -33,6 +36,7 @@ class Member_model extends CI_Model {
 
         return $this->db->insert_id();
     }
+    
     
 }
 
