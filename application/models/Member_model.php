@@ -21,7 +21,7 @@ class Member_model extends CI_Model {
         $this->db->from('member_info');
         
         if($params['user_id']){
-            $this->db->where('id', $user_id);
+            $this->db->where('id', $params['user_id']);
         }
         
         return $this->db->count_all_results();
