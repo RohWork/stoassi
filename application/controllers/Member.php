@@ -131,7 +131,7 @@ class Member extends CI_Controller {
 		
 		
 		if ($config['total_rows'] > 0) {
-                    $rows = $this->member_md->get_stock_list($offset, $search_vo);
+                    $rows = $this->member_md->get_member_list($offset, $search_vo);
                 } else {
                     $rows = false;
                 }
@@ -143,7 +143,7 @@ class Member extends CI_Controller {
 
 		
 		$this->load->view(LANGUAGE.'/header', $this->head_data);
-		$this->load->view(LANGUAGE.'/stock_list', $data);
+		$this->load->view(LANGUAGE.'/member_list', $data);
             
             
         }

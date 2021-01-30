@@ -25,37 +25,37 @@ class Stock extends CI_Controller {
 	public function stock_list()
 	{		
 
-		$this->load->library('pagination');
+            $this->load->library('pagination');
 
-		$search_vo  = new stdClass();
-		
-		$config['per_page'] = 10;
-		$offset = $this->input->get('per_page');
-		$config['base_url'] = current_url() . '?' . reset_GET('per_page');
-		
-		$search_vo->config_per_page = $config['per_page'];
-		$config['total_rows'] = $this->stock_md->count_stock_list($search_vo);
+            $search_vo  = new stdClass();
 
-		$config = setPagination($config);
-		$this->pagination->initialize($config);
-		
- 		$data['pagination'] = $this->pagination->create_links();
-		
-		
-		if ($config['total_rows'] > 0) {
-            $rows = $this->stock_md->get_stock_list($offset, $search_vo);
-        } else {
-            $rows = false;
-        }
-		
-		
-		$data['rows'] = $rows;
-		$data['offset'] = $offset;
-		$data['base_url'] = $config['base_url'];
+            $config['per_page'] = 10;
+            $offset = $this->input->get('per_page');
+            $config['base_url'] = current_url() . '?' . reset_GET('per_page');
 
+            $search_vo->config_per_page = $config['per_page'];
+            $config['total_rows'] = $this->stock_md->count_stock_list($search_vo);
+
+            $config = setPagination($config);
+            $this->pagination->initialize($config);
+
+            $data['pagination'] = $this->pagination->create_links();
 		
-		$this->load->view(LANGUAGE.'/header', $this->head_data);
-		$this->load->view(LANGUAGE.'/stock_list', $data);
+		
+            if ($config['total_rows'] > 0) {
+                $rows = $this->stock_md->get_stock_list($offset, $search_vo);
+            } else {
+                $rows = false;
+            }
+		
+		
+            $data['rows'] = $rows;
+            $data['offset'] = $offset;
+            $data['base_url'] = $config['base_url'];
+
+
+            $this->load->view(LANGUAGE.'/header', $this->head_data);
+            $this->load->view(LANGUAGE.'/stock_list', $data);
 	}
 	
 		
