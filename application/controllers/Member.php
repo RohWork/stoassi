@@ -55,9 +55,9 @@ class Member extends CI_Controller {
             $confirm_id = $this->input->post("confirm_id");
             $user_id = $this->input->post("user_id");
             
+            $params = array("user_id" => $user_id);
             
-            
-            $cnt = $this->member_md->count_member_id($user_id);
+            $cnt = $this->member_md->count_member_list($params);
             
             
             
@@ -106,6 +106,43 @@ class Member extends CI_Controller {
             
             header("Content-Type: application/json;");
             echo json_encode($data);
+            
+        }
+        
+        public function manage_member_list(){
+            
+                $this->load->library('pagination');
+
+		$search_vo  = new stdClass();
+		
+		$config['per_page'] = 10;
+		$offset = $this->input->get('per_page');
+		$config['base_url'] = current_url() . '?' . reset_GET('per_page');
+		
+		$search_vo->config_per_page = $config['per_page'];
+		$config['total_rows'] = $this->stock_md->count_member_list($search_vo);
+
+		$config = setPagination($config);
+		$this->pagination->initialize($config);
+		
+ 		$data['pagination'] = $this->pagination->create_links();
+		
+		
+		if ($config['total_rows'] > 0) {
+                    $rows = $this->member_md->get_stock_list($offset, $search_vo);
+                } else {
+                    $rows = false;
+                }
+		
+		
+		$data['rows'] = $rows;
+		$data['offset'] = $offset;
+		$data['base_url'] = $config['base_url'];
+
+		
+		$this->load->view(LANGUAGE.'/header', $this->head_data);
+		$this->load->view(LANGUAGE.'/stock_list', $data);
+            
             
         }
 }
