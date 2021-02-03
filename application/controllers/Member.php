@@ -153,5 +153,31 @@ class Member extends CI_Controller {
             
             
         }
+        
+        public function get_member_info(){
+            
+            
+            $user_id = $this->input->post("user_id");
+            $result = false;
+            $search_vo  = new stdClass();
+            
+            $search_vo->user_id =  $user_id;
+            
+            
+            $result_array = $this->member_md->get_member_info_idx($search_vo);
+            
+            
+            if(!empty($result_array)){
+                $result = true;
+            }
+            
+            $data = array(
+                "result" => $result,
+                "result_data"  => $result_array
+            );
+            
+            header("Content-Type: application/json;");
+            echo json_encode($data);
+        }
 }
 ?>
