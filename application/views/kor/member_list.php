@@ -232,7 +232,7 @@
             type:'post',
             data:params,
             success:function(data){
-                //set_detail_modal(data.result);
+                set_detail_modal(data.result_data);
             }
     })
 
@@ -241,29 +241,13 @@
 
     function set_detail_modal(data){
         
-            $("#update_member_idx").val(data.idx);
-            $("#update_stock_name").val(data.name);
-            $("#update_stock_count").val(data.count);
-            $("#update_stock_unit").val(data.unit);
-            $("#update_stock_comment").val(data.memo);
-            $("#update_stock_useyn").val(data.state);
+            $("#update_id").val(data.id);
+            $("#update_name").val(data.user_name);
+            $("#update_tel").val(data.tel);
+            $("#update_shop_name").val(data.shop_name);
+            $("#update_shop_addr").val(data.addr);
+            $("#update_email").val(data.state);
             
-            if(data.state == "1"){
-                $("#stock_use_y").prop("checked", true);
-            }else{
-                $("#stock_use_y").prop("checked", false);
-            }
-            
-            if(data.image != null){
-                $("#stock_image").attr("src", 'http://<?=$_SERVER['HTTP_HOST']?>'+data.image);
-            }else{
-                $("#stock_image").attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKaZM3avvgYxxTcLs_z8BzV-grlQfZF_NhSQ&usqp=CAU");
-            }
-            if(data.history_price != null){
-                $("#stock_amt_history").text("€ "+data.history_price);
-            }else{
-                $("#stock_amt_history").text("정보없음");
-            }
             get_category_info(data.stock_category_idx, 'detail');
             get_seller_info(data.stock_seller_idx, 'detail');
     }
