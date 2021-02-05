@@ -63,7 +63,7 @@
                                     <label for="update_id" class="col-sm-3 control-label">ID</label>
                                     <div class="col-sm-8">
                                             <input type="hidden" id="update_confirm_id" name="update_confirm_id"/>
-                                            <input type="text" id="update_id" name="update_id" class="form-control"/>
+                                            <input type="text" id="update_id" name="update_id" class="form-control" readonly/>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -150,7 +150,7 @@
                                     <label for="insert_id" class="col-sm-3 control-label">ID</label>
                                     <div class="col-sm-8">
                                             <input type="hidden" id="update_confirm_id" name="update_confirm_id"/>
-                                            <input type="text" id="insert_id" name="insert_id" class="form-control" readonly/>
+                                            <input type="text" id="insert_id" name="insert_id" class="form-control"/>
                                     </div>
                             </div>
                             <div class="form-group">
