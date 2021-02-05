@@ -228,7 +228,7 @@
                 "idx" : idx
         };
         $.ajax({
-            url:'/stock/get_member_info',
+            url:'/member/get_member_info',
             type:'post',
             data:params,
             success:function(data){
