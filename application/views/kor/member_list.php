@@ -64,6 +64,8 @@
                                     <div class="col-sm-8">
                                             <input type="hidden" id="update_confirm_id" name="update_confirm_id"/>
                                             <input type="text" id="update_id" name="update_id" class="form-control" readonly="readonly"/>
+                                            <input type="hidden" id="update_member_idx" name="update_member_idx"/>
+                                            <input type="hidden" id="update_shop_idx" name="update_shop_idx"/>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -149,7 +151,7 @@
                             <div class="form-group">
                                     <label for="insert_id" class="col-sm-3 control-label">ID</label>
                                     <div class="col-sm-8">
-                                            <input type="hidden" id="update_confirm_id" name="update_confirm_id"/>
+                                            <input type="hidden" id="insert_confirm_id" name="insert_confirm_id"/>
                                             <input type="text" id="insert_id" name="insert_id" class="form-control"/>
                                     </div>
                             </div>
@@ -259,7 +261,8 @@
             $("#update_shop_name").val(data.shop_name);
             $("#update_shop_addr").val(data.addr);
             $("#update_email").val(data.email);
-            
+            $("#update_member_idx").val(data.idx);
+            $("#update_shop_idx").val(data.shop_idx);
             get_category_info(data.category_idx, 'detail');
             set_state_info(data.state, 'detail');
     }
