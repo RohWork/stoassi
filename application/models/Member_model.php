@@ -17,7 +17,7 @@ class Member_model extends CI_Model {
     function get_member_info_idx($user_idx){
         
         $this->db->select('mi.idx, mi.shop_idx, mi.id, mi.NAME AS user_name, mi.tel, mi.LEVEL');
-        $this->db->select('mi.email, si.addr, si.name AS shop_name, sc.name AS shop_category , si.category_idx');
+        $this->db->select('mi.email, si.addr, si.name AS shop_name, sc.name AS shop_category , si.category_idx, si.state');
         $this->db->from('member_info as mi');
         $this->db->join('shop_info as si', 'mi.shop_idx = si.idx', 'left');
         $this->db->join('shop_category as sc', 'si.category_idx = sc.idx', 'left');
@@ -44,7 +44,7 @@ class Member_model extends CI_Model {
     function get_member_list($offset, $search_vo){
         
         $this->db->select('mi.idx, mi.shop_idx, mi.id, mi.NAME AS user_name, mi.tel, mi.LEVEL');
-        $this->db->select('mi.email, si.addr, si.name AS shop_name, sc.name AS shop_category ');
+        $this->db->select('mi.email, si.addr, si.name AS shop_name, sc.name AS shop_category, si.state ');
         $this->db->from('member_info as mi');
         $this->db->join('shop_info as si', 'mi.shop_idx = si.idx', 'left');
         $this->db->join('shop_category as sc', 'si.category_idx = sc.idx', 'left');
