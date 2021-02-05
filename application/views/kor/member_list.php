@@ -260,8 +260,8 @@
             $("#update_shop_addr").val(data.addr);
             $("#update_email").val(data.email);
             
-            get_category_info(data.stock_category_idx, 'detail');
-            get_seller_info(data.stock_seller_idx, 'detail');
+            get_category_info(data.category_idx, 'detail');
+            set_state_info(data.state, 'detail');
     }
 
     function modal_close(id_val){
@@ -309,27 +309,8 @@
     })
     }
 
-    function get_seller_info(idx, mode){
-        $.ajax({
-        url:'/stock/get_stock_seller',
-        type:'post',
-        data:'',
-        success:function(data){
-            var str = '';
-            data.forEach(function (item){
-                    if(idx == item.idx){
-                            str += "<option value='"+item.idx+"' selected>"+item.name+"</option>";
-                    }else{
-                            str += "<option value='"+item.idx+"'>"+item.name+"</option>";
-                    }
-            });
-            if(mode == 'detail'){
-                    $("#update_stock_seller_idx").html(str);
-            }else{
-                    $("#insert_stock_seller_idx").html(str);
-            }
-        }
-    })
+    function set_state_info(idx, mode){
+        $("#update_shop_state").val(idx).attr("selected","selected");
     }
 
 function stock_insert(){
