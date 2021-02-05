@@ -284,9 +284,9 @@
                     }
             });
             if(mode == 'detail'){
-                    $("#update_stock_category_idx").html(str);
+                    $("#update_sshop_category").html(str);
             }else{
-                    $("#insert_stock_category_idx").html(str);
+                    $("#insert_shop_category").html(str);
             }
         }
     })
