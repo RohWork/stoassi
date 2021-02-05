@@ -358,7 +358,7 @@
                                             ushop_addr, 
                                             uemail, 
                                     );
-        if(requre_params(params, upw1, upw2){
+        if(requre_params(params, upw1, upw2)){
         
             var form = $("#member_update_form");
 
