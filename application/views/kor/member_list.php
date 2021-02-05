@@ -118,7 +118,13 @@
                             <div class="form-group">
                                     <label for="update_shop_state" class="col-sm-3 control-label">상태</label>
                                     <div class="col-sm-9">
-                                            <select name="update_shop_state" id="update_shop_state" class="form-control"></select>
+                                        <select name="update_shop_state" id="update_shop_state" class="form-control">
+                                            <option value="Y">승인</option>
+                                            <option value="1">Lv1</option> 
+                                            <option value="2">Lv2</option>
+                                            <option value="3">Lv3</option>
+                                            <option value="N">비승인</option>
+                                        </select>
                                     </div>
                             </div>
 			</form>
