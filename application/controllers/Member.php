@@ -159,12 +159,8 @@ class Member extends CI_Controller {
             
             $idx = $this->input->post("idx");
             $result = false;
-            $search_vo  = new stdClass();
-            
-            $search_vo->idx =  $idx;
-            
-            
-            $result_array = $this->member_md->get_member_info_idx($search_vo);
+
+            $result_array = $this->member_md->get_member_info_idx($idx);
             
             
             if(!empty($result_array)){
