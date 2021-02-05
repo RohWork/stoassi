@@ -175,5 +175,52 @@ class Member extends CI_Controller {
             header("Content-Type: application/json;");
             echo json_encode($data);
         }
+        
+        public function set_update_member(){
+            
+            $code = '';
+            $message = '';
+            
+            $vo = array();
+            $vo_shop = array();
+            
+            $member_idx = $this->input->post("update_member_idx");
+            $vo['name'] = $this->input->post("update_name");
+            $vo['tel'] = $this->input->post("update_tel");
+            $vo['email'] = $this->input->post("update_email");
+            $vo['pwd'] = base64_encode(hash('sha512',$this->input->post("update_pw1"),true));
+
+            
+            $shop_idx = $this->input->post("update_shop_idx");
+            $vo_shop['email'] = $this->input->post("update_email");
+            $vo_shop['name'] = $this->input->post("update_shop_name");
+            $vo_shop['category_idx'] = $this->input->post("update_shop_category");
+            $vo_shop['state'] = $this->input->post("update_shop_state");
+            $vo_shop['addr'] = $this->input->post("update_shop_addr");
+            
+            $this->db->trans_begin();
+            
+            $this->member_md->update_member_info($vo, $member_idx);
+            $this->member_md->update_shop_info($vo_shop, $shop_idx);
+            
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                $code = 400;
+                $message = "상품 수정 실패";
+            } else {
+                $this->db->trans_commit();
+                $code = 200;
+                $message = '성공';
+            }
+            
+                        
+            $data = array(
+                'code' => $code,
+                'message' => $message
+            );
+
+            header("Content-Type: application/json;");
+            echo json_encode($data);
+        }
 }
 ?>
