@@ -382,6 +382,7 @@
     }
     
     function requre_params(params, user_pw1, user_pw2){
+        
                 var j =0;
                 var check_passwd = new Array();
                 
