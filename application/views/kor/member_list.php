@@ -131,7 +131,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" onclick="modal_close('member_update_form')" class="btn btn-default" data-dismiss="modal">취소</button>
-			<button type="button" onclick="member_update()" class="btn btn-primary">저장하기</button>
+			<button type="button" onclick="shop_update()" class="btn btn-primary">저장하기</button>
 		  </div>
 		</div>
 	  </div>
