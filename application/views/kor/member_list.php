@@ -271,33 +271,16 @@
 
     function get_category_info(idx, mode){
         $.ajax({
-        url:'/stock/get_stock_category',
+        url:'/member/get_shop_category',
         type:'post',
         data:'',
         success:function(data){
             var str = '';
             data.forEach(function (item){
-				var view_name;
-					
-					
-					switch(item.level){
-						case "2":
-							view_name = item.lv1_sc_name +">"+ item.name;
-							break;
-						case "3":
-							view_name = item.lv1_sc_name +">"+ item.lv2_sc_name +">"+ item.name;
-							break;
-						case "4":
-							view_name = item.lv1_sc_name +">"+ item.lv2_sc_name +">"+item.lv3_sc_name +">"+ item.name;
-							break;
-						default:
-							view_name = item.name;
-							break;
-					}
                     if(idx == item.idx){
-                            str += "<option value='"+item.idx+"' selected>"+view_name+"</option>";
+                            str += "<option value='"+item.idx+"' selected>"+item.name+"</option>";
                     }else{
-                            str += "<option value='"+item.idx+"'>"+view_name+"</option>";
+                            str += "<option value='"+item.idx+"'>"+item.name+"</option>";
                     }
             });
             if(mode == 'detail'){
