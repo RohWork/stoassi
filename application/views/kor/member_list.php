@@ -284,7 +284,7 @@
                     }
             });
             if(mode == 'detail'){
-                    $("#update_sshop_category").html(str);
+                    $("#update_shop_category").html(str);
             }else{
                     $("#insert_shop_category").html(str);
             }
