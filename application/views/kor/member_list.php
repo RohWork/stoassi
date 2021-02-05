@@ -394,39 +394,34 @@
                     }
                 }
                 
-                var num = user_pw1.val().search(/[0-9]/g);
-                var eng = user_pw1.val().search(/[a-z]/ig);
-                var spe = user_pw1.val().search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-                
-                if(user_pw1.val() != user_pw2.val()){
-                    alert("비밀번호가 서로 다릅니다");
-                    user_pw1.focus();
-                    user_pw1.attr("class","form-control alert-danger");
-                    return false;
-                }else if( user_pw1.val().length < 8 || user_pw1.val().length > 20){
-                    alert("비밀번호는 8~20자리 이내로 입력해주세요");
-                    user_pw1.focus();
-                    user_pw1.attr("class","form-control alert-danger");
-                    return false;
-                }else if (user_pw1.val().search(/\s/) != -1){
-                    alert("비밀번호는 공백 없이 입력해주세요.");
-                    user_pw1.focus();
-                    user_pw1.attr("class","form-control alert-danger");
-                    return false;
-                }else if(num < 0 || eng < 0 || spe < 0){
-                    alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
-                    user_pw1.focus();
-                    user_pw1.attr("class","form-control alert-danger");
-                    return false;
+                if(user_pw1.val() != "" && user_pw2.val() != ""){
+                    var num = user_pw1.val().search(/[0-9]/g);
+                    var eng = user_pw1.val().search(/[a-z]/ig);
+                    var spe = user_pw1.val().search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+                    if(user_pw1.val() != user_pw2.val()){
+                        alert("비밀번호가 서로 다릅니다");
+                        user_pw1.focus();
+                        user_pw1.attr("class","form-control alert-danger");
+                        return false;
+                    }else if( user_pw1.val().length < 8 || user_pw1.val().length > 20){
+                        alert("비밀번호는 8~20자리 이내로 입력해주세요");
+                        user_pw1.focus();
+                        user_pw1.attr("class","form-control alert-danger");
+                        return false;
+                    }else if (user_pw1.val().search(/\s/) != -1){
+                        alert("비밀번호는 공백 없이 입력해주세요.");
+                        user_pw1.focus();
+                        user_pw1.attr("class","form-control alert-danger");
+                        return false;
+                    }else if(num < 0 || eng < 0 || spe < 0){
+                        alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                        user_pw1.focus();
+                        user_pw1.attr("class","form-control alert-danger");
+                        return false;
+                    }
                 }
                 
-                
-                if(confirm_id.val() == ""){
-                    alert("아이디 중복체크를 진행해주세요.");
-                    user_id.focus();
-                    user_id.attr("class","form-control alert-danger");
-                    return false;
-                }
                 
                 return true;
             }
