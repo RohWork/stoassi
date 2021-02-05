@@ -204,7 +204,7 @@
                             </div>
                             <div class="form-group">
                                     <label for="insert_shop_state" class="col-sm-3 control-label">상태</label>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-4">
                                         <select name="insert_shop_state" id="insert_shop_state" class="form-control">
                                             <option value="Y">승인</option>
                                             <option value="1">Lv1</option> 
@@ -296,7 +296,7 @@
         $("#update_shop_state").val(idx).attr("selected","selected");
     }
 
-function stock_insert(){
+    function shop_insert(){
 
         var stock_name = $("#insert_stock_name");
         var stock_unit = $("#insert_stock_unit");
@@ -316,7 +316,7 @@ function stock_insert(){
 		}
         var form = $("#stock_insert_form");
         var formData = new FormData(form[0]);
-        formData.append("file", $("#insert_stock_image")[0].files[0]);
+
 
         $.ajax({
             url:'/stock/set_stock',
@@ -341,81 +341,95 @@ function stock_insert(){
     }
     
     
-    function stock_update(){
+    function shop_update(){
         
-        var stock_name = $("#stock_name");
-        var stock_unit = $("#stock_unit");
+        var uname = new Array($("#update_name"), "이름");
+        var utel = new Array($("#update_tel"), "연락처");
+        var ushop_name = new Array($("#update_shop_name"), "가게명");
+        var ushop_addr = new Array($("#update_shop_addr"), "가게주소");
+        var uemail = new Array($("#update_email"), "이메일주소");
+        var upw1 = $("#update_pw1");
+        var upw2 = $("#update_pw2");
+        
+        var params = new Array(
+                                            uname, 
+                                            utel, 
+                                            ushop_name, 
+                                            ushop_addr, 
+                                            uemail, 
+                                    );
+        if(requre_params(params, upw1, upw2){
+        
+            var form = $("#member_update_form");
 
-        if(stock_name.val() == ""){
-                alert("재료명을 입력하시기 바랍니다.");
-                stock_name.focus();
-                return;
+            $.ajax({
+                url:'/member/set_update_member',
+                type:'post',
+                processData : false,
+                contentType : false,
+                data:form.serialize(),
+                success:function(data){
+                    alert('수정완료');
+                    location.reload();
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
         }
-        if(stock_unit.val() == ""){
-                alert("갯수 단위를 입력하시기 바랍니다.");
-                stock_unit.focus();
-                return;
-        }
-        
-        if($("#update_stock_image").val() != ""){
-            file_upload_test($("#update_stock_image"));
-        }
-        
-        var form = $("#stock_update_form");
-        var formData = new FormData(form[0]);
-        formData.append("file", $("#update_stock_image")[0].files[0]);
-        
-        $.ajax({
-            url:'/stock/set_update_stock',
-            type:'post',
-            processData : false,
-            contentType : false,
-            data:formData,
-            success:function(data){
-                alert('수정완료');
-                location.reload();
-            },
-            error: function(xhr,status,error) {
-                console.log(xhr,status,error);
-                alert("네트워크 오류!! 관리자에게 문의 주세요!!");
-                return false;
-            }	 
-        });
-
     }
     
-    function file_upload_test(upload_file){
-        var extArray = new Array("jpg", "gif", "png");
-        var path = upload_file.val();
-        if(path == ""){
-            alert("파일을 추가해주세요.");
-            return false;
-        }
-        
-        var pos = path.indexOf(".");
-        if(pos < 0 ){
-            alert("확장자가 없는 파일입니다.");
-            return false;
-        }
-        
-        var ext = path.slice(path.indexOf(".")+ 1).toLowerCase();
-        var checkExt = false;
-        for(var i = 0; i < extArray.length; i++) {
-            if(ext == extArray[i]) {
-                    checkExt = true;
-                    break;
+    function requre_params(params, user_pw1, user_pw2){
+                var j =0;
+                var check_passwd = new Array();
+                
+                for(var i=0; i<params.length; i++){
+                    if(params[i][0].val() == ""){
+                        alert(params[i][1]+" 을(를) 확인해주세요.");
+                        params[i][0].attr("class","form-control alert-danger");
+                        params[i][0].focus();
+                        return false;
+                    }
+                }
+                
+                var num = user_pw1.val().search(/[0-9]/g);
+                var eng = user_pw1.val().search(/[a-z]/ig);
+                var spe = user_pw1.val().search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+                
+                if(user_pw1.val() != user_pw2.val()){
+                    alert("비밀번호가 서로 다릅니다");
+                    user_pw1.focus();
+                    user_pw1.attr("class","form-control alert-danger");
+                    return false;
+                }else if( user_pw1.val().length < 8 || user_pw1.val().length > 20){
+                    alert("비밀번호는 8~20자리 이내로 입력해주세요");
+                    user_pw1.focus();
+                    user_pw1.attr("class","form-control alert-danger");
+                    return false;
+                }else if (user_pw1.val().search(/\s/) != -1){
+                    alert("비밀번호는 공백 없이 입력해주세요.");
+                    user_pw1.focus();
+                    user_pw1.attr("class","form-control alert-danger");
+                    return false;
+                }else if(num < 0 || eng < 0 || spe < 0){
+                    alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                    user_pw1.focus();
+                    user_pw1.attr("class","form-control alert-danger");
+                    return false;
+                }
+                
+                
+                if(confirm_id.val() == ""){
+                    alert("아이디 중복체크를 진행해주세요.");
+                    user_id.focus();
+                    user_id.attr("class","form-control alert-danger");
+                    return false;
+                }
+                
+                return true;
             }
-	}
-
-	if(checkExt == false) {
-            alert("업로드 할 수 없는 파일 확장자 입니다.");
-	    return false;
-
-	}
-	return true;
-
-        
-    }
         
 </script>
 </html>
