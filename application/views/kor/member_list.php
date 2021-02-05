@@ -246,7 +246,7 @@
             $("#update_tel").val(data.tel);
             $("#update_shop_name").val(data.shop_name);
             $("#update_shop_addr").val(data.addr);
-            $("#update_email").val(data.state);
+            $("#update_email").val(data.email);
             
             get_category_info(data.stock_category_idx, 'detail');
             get_seller_info(data.stock_seller_idx, 'detail');
