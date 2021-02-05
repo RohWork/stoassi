@@ -157,11 +157,11 @@ class Member extends CI_Controller {
         public function get_member_info(){
             
             
-            $user_id = $this->input->post("user_id");
+            $idx = $this->input->post("idx");
             $result = false;
             $search_vo  = new stdClass();
             
-            $search_vo->user_id =  $user_id;
+            $search_vo->idx =  $idx;
             
             
             $result_array = $this->member_md->get_member_info_idx($search_vo);
