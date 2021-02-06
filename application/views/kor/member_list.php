@@ -330,7 +330,7 @@
 
         if( requre_params(params_array, user_pw1, user_pw2) ){
                     
-            var form = $("#join_form");
+            var form = $("#member_insert_form");
 
             $.ajax({
                 url:'/member/join_process',
