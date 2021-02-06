@@ -308,14 +308,17 @@
         var shop_name = new Array($("#shop_name"), "가게명");
         var shop_addr = new Array($("#shop_addr"), "가게주소");
         var user_email = new Array($("#user_email"), "이메일주소");
+        var user_pw_ar1 = new Array($("#user_pw1"), "비밀번호");
+        var user_pw_ar2 = new Array($("#user_pw2"), "비밀번호");
+        
         var user_pw1 = $("#user_pw1");
         var user_pw2 = $("#user_pw2");
 
 
         var params_array = new Array(
                                         user_id, 
-                                        user_pw1, 
-                                        user_pw2, 
+                                        user_pw_ar1, 
+                                        user_pw_ar2, 
                                         user_name, 
                                         user_tel, 
                                         user_email, 
