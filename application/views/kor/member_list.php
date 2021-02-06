@@ -15,6 +15,7 @@
 						<th>연락처</th>
 						<th>이메일주소</th>
                                                 <th>가게주소</th>
+                                                <th>가게상태</th>
 						<th>수정/삭제</th>
 					</tr>
 				</thead>
@@ -31,6 +32,7 @@
 						<td><?=$row->tel?></td>
 						<td><?=$row->email?></td>
                                                 <td><?=$row->addr?></td>
+                                                <td><?=$row->stat?></td>
 						<td><button type="button" id="modi_button" onclick="detail_member_show('<?=$row->idx?>')" class="btn btn-default">확인/수정</button></td>
 					</tr>
 				<?php
