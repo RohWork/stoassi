@@ -372,8 +372,12 @@
                 contentType : false,
                 data:form.serialize(),
                 success:function(data){
-                    alert('수정완료');
-                    location.reload();
+                    if(data.code == 200){
+                        alert('수정완료');
+                        location.reload();
+                    }else{
+                        alert('처리실패');
+                    }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
