@@ -32,7 +32,7 @@
 						<td><?=$row->tel?></td>
 						<td><?=$row->email?></td>
                                                 <td><?=$row->addr?></td>
-                                                <td><?=$row->stat?></td>
+                                                <td><?=$row->state?></td>
 						<td><button type="button" id="modi_button" onclick="detail_member_show('<?=$row->idx?>')" class="btn btn-default">확인/수정</button></td>
 					</tr>
 				<?php
