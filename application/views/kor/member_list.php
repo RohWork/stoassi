@@ -71,13 +71,13 @@
                             <div class="form-group">
 					<label for="update_pw1" class="col-sm-3 control-label">PW1</label>
 					<div class="col-sm-8">
-						<input type="text" id="update_pw1" name="update_pw1" class="form-control"/>
+						<input type="password" id="update_pw1" name="update_pw1" class="form-control"/>
 					</div>
 				</div>
                             <div class="form-group">
 					<label for="update_pw2" class="col-sm-3 control-label">PW2</label>
 					<div class="col-sm-8">
-						<input type="text" id="update_pw2" name="update_pw2" class="form-control"/>
+						<input type="password" id="update_pw2" name="update_pw2" class="form-control"/>
 					</div>
                             </div>
 
