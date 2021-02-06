@@ -387,6 +387,44 @@
         }
     }
     
+    
+    
+    function id_check(){
+        
+        var user_id = new Array($("#insert_id"), "아이디");
+        var confirm_id = new Array($("#insert_confirm_id"), "아이디");
+        
+        if(user_id[0].val() == ""){
+            alert(user_id[1]+"를 입력해주세요.");
+            return false;
+        }else{
+
+             $.ajax({
+                url:'/member/check_id',
+                type:'post',
+                data:{user_id : user_id[0].val() },
+                success:function(data){
+                    if(data.result){
+                        confirm_id[0].val(user_id[0].val());
+                        $("#user_id").attr("class","form-control alert-success");
+                    }else{
+                        alert("중복된 계정입니다.");
+                        $("#user_id").attr("class","form-control alert-danger");
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
+
+        }
+                
+    }
+    
+    
+    
     function requre_params(params, user_pw1, user_pw2){
         
                 var j =0;
