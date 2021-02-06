@@ -64,13 +64,13 @@ class Member_model extends CI_Model {
         return $this->db->insert_id();
     }
     
-    function update_member_info($data){
+    function update_member_info($data, $idx){
         $data['modi_date'] = date('Y-m-d H:i:s');
         $this->db->where("idx",$idx);
         $this->db->update('member_info',$data);
     }
     
-    function update_shop_info($data){
+    function update_shop_info($data, $idx){
         
         $data['modi_date'] = date('Y-m-d H:i:s');
         $this->db->where("idx",$idx);
