@@ -151,64 +151,64 @@
                             <div class="form-group">
                                     <label for="insert_id" class="col-sm-3 control-label">ID</label>
                                     <div class="col-sm-6">
-                                            <input type="hidden" id="insert_confirm_id" name="insert_confirm_id"/>
-                                            <input type="text" id="insert_id" name="insert_id" class="form-control"/>
+                                            <input type="hidden" id="confirm_id" name="confirm_id"/>
+                                            <input type="text" id="user_id" name="user_id" class="form-control"/>
                                     </div>
                                     <div class="col-md-2"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
                             </div>
                             <div class="form-group">
 					<label for="insert_pw1" class="col-sm-3 control-label">PW1</label>
 					<div class="col-sm-8">
-                                            <input type="password" id="insert_pw1" name="insert_pw1" class="form-control"/>
+                                            <input type="password" id="user_pw1" name="user_pw1" class="form-control"/>
 					</div>
 				</div>
                             <div class="form-group">
 					<label for="insert_pw2" class="col-sm-3 control-label">PW2</label>
 					<div class="col-sm-8">
-                                            <input type="password" id="insert_pw2" name="insert_pw2" class="form-control"/>
+                                            <input type="password" id="user_pw2" name="user_pw2" class="form-control"/>
 					</div>
                             </div>
 
                             <div class="form-group">
                                     <label for="insert_name" class="col-sm-3 control-label">이름</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="insert_name" name="insert_name" class="form-control"/>
+                                            <input type="text" id="user_name" name="user_name" class="form-control"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_tel" class="col-sm-3 control-label">연락처</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="insert_tel" name="insert_tel" class="form-control"/>
+                                            <input type="text" id="user_tel" name="user_tel" class="form-control"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_shop_name" class="col-sm-3 control-label">가게명</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="insert_shop_name" name="insert_shop_name" class="form-control"/>
+                                            <input type="text" id="shop_name" name="shop_name" class="form-control"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_shop_category" class="col-sm-3 control-label">가게타입</label>
                                     <div class="col-sm-8">
-                                        <select name="insert_shop_category" id="insert_shop_category" class="form-control"></select>
+                                        <select name="shop_category" id="shop_category" class="form-control"></select>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_shop_addr" class="col-sm-3 control-label">가게주소</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="insert_shop_addr" name="insert_shop_addr" class="form-control"/>
+                                            <input type="text" id="shop_addr" name="shop_addr" class="form-control"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_email" class="col-sm-3 control-label">이메일주소</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="insert_email" name="insert_email" class="form-control"/>
+                                            <input type="text" id="user_email" name="user_email" class="form-control"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_shop_state" class="col-sm-3 control-label">상태</label>
                                     <div class="col-sm-4">
-                                        <select name="insert_shop_state" id="insert_shop_state" class="form-control">
+                                        <select name="shop_state" id="shop_state" class="form-control">
                                             <option value="Y">승인</option>
                                             <option value="1">Lv1</option> 
                                             <option value="2">Lv2</option>
@@ -221,7 +221,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" onclick="modal_close('member_insert_form')" class="btn btn-default" data-dismiss="modal">취소</button>
-			<button type="button" onclick="member_insert()" class="btn btn-primary">저장하기</button>
+			<button type="button" onclick="shop_insert()" class="btn btn-primary">저장하기</button>
 		  </div>
 		</div>
 	  </div>
@@ -290,7 +290,7 @@
             if(mode == 'detail'){
                     $("#update_shop_category").html(str);
             }else{
-                    $("#insert_shop_category").html(str);
+                    $("#shop_category").html(str);
             }
         }
     })
@@ -302,45 +302,52 @@
 
     function shop_insert(){
 
-        var stock_name = $("#insert_stock_name");
-        var stock_unit = $("#insert_stock_unit");
+        var user_id = new Array($("#confirm_id"), "아이디확인");
+        var user_name = new Array($("#user_name"), "이름");
+        var user_tel = new Array($("#user_tel"), "연락처");
+        var shop_name = new Array($("#shop_name"), "가게명");
+        var shop_addr = new Array($("#shop_addr"), "가게주소");
+        var user_email = new Array($("#user_email"), "이메일주소");
+        var user_pw1 = $("#user_pw1");
+        var user_pw2 = $("#user_pw2");
 
-        if(stock_name.val() == ""){
-                alert("재료명을 입력하시기 바랍니다.");
-                stock_name.focus();
-                return;
+
+        var params_array = new Array(
+                                        user_id, 
+                                        user_pw1, 
+                                        user_pw2, 
+                                        user_name, 
+                                        user_tel, 
+                                        user_email, 
+                                       // email_confirm,
+                                        shop_name, 
+                                        shop_addr
+                                    );
+
+
+        if( requre_params(params_array) ){
+                    
+            var form = $("#join_form");
+
+            $.ajax({
+                url:'/member/join_process',
+                type:'post',
+                data: form.serialize(),
+                success:function(data){
+                    if(data.result == true){
+                        alert(data.message);
+                        location.href="/";
+                    }else{
+                        alert(data.message);
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
         }
-        if(stock_unit.val() == ""){
-                alert("갯수 단위를 입력하시기 바랍니다.");
-                stock_unit.focus();
-                return;
-        }
-		if($("#update_stock_image").val() != ""){
-			file_upload_test($("#insert_stock_image"));
-		}
-        var form = $("#stock_insert_form");
-        var formData = new FormData(form[0]);
-
-
-        $.ajax({
-            url:'/stock/set_stock',
-            type:'post',
-            processData : false,
-            contentType : false,
-            data:formData,
-            success:function(data){
-				alert(data.message);
-				
-				if(data.code == 200){
-					location.reload();
-				}
-            },
-            error: function(xhr,status,error) {
-                console.log(xhr,status,error);
-                alert("네트워크 오류!! 관리자에게 문의 주세요!!");
-                return false;
-            }	 
-        });
 
     }
     
@@ -391,8 +398,8 @@
     
     function id_check(){
         
-        var user_id = new Array($("#insert_id"), "아이디");
-        var confirm_id = new Array($("#insert_confirm_id"), "아이디");
+        var user_id = new Array($("#user_id"), "아이디");
+        var confirm_id = new Array($("#confirm_id"), "아이디체크");
         
         if(user_id[0].val() == ""){
             alert(user_id[1]+"를 입력해주세요.");
