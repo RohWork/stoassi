@@ -158,13 +158,13 @@
                             <div class="form-group">
 					<label for="insert_pw1" class="col-sm-3 control-label">PW1</label>
 					<div class="col-sm-8">
-						<input type="text" id="insert_pw1" name="insert_pw1" class="form-control"/>
+                                            <input type="password" id="insert_pw1" name="insert_pw1" class="form-control"/>
 					</div>
 				</div>
                             <div class="form-group">
 					<label for="insert_pw2" class="col-sm-3 control-label">PW2</label>
 					<div class="col-sm-8">
-						<input type="text" id="insert_pw2" name="insert_pw2" class="form-control"/>
+                                            <input type="password" id="insert_pw2" name="insert_pw2" class="form-control"/>
 					</div>
                             </div>
 
