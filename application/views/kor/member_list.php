@@ -368,8 +368,6 @@
             $.ajax({
                 url:'/member/set_update_member',
                 type:'post',
-                processData : false,
-                contentType : false,
                 data:form.serialize(),
                 success:function(data){
                     if(data.code == 200){
