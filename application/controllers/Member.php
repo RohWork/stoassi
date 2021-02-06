@@ -188,8 +188,10 @@ class Member extends CI_Controller {
             $vo['name'] = $this->input->post("update_name");
             $vo['tel'] = $this->input->post("update_tel");
             $vo['email'] = $this->input->post("update_email");
-            $vo['pwd'] = base64_encode(hash('sha512',$this->input->post("update_pw1"),true));
-
+            
+            if(!empty($this->input->post("update_pw1"))){
+                $vo['pwd'] = base64_encode(hash('sha512',$this->input->post("update_pw1"),true));
+            }
             
             $shop_idx = $this->input->post("update_shop_idx");
             $vo_shop['email'] = $this->input->post("update_email");
