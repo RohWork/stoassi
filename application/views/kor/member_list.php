@@ -63,7 +63,7 @@
                                     <label for="update_id" class="col-sm-3 control-label">ID</label>
                                     <div class="col-sm-8">
                                             <input type="hidden" id="update_confirm_id" name="update_confirm_id"/>
-                                            <input type="text" id="update_id" name="update_id" class="form-control" readonly="readonly"/>
+                                            <input type="text" id="update_id" name="update_id" class="form-control" readonly="readonly" onkeypress="input_change(this)"/>
                                             <input type="hidden" id="update_member_idx" name="update_member_idx"/>
                                             <input type="hidden" id="update_shop_idx" name="update_shop_idx"/>
                                     </div>
@@ -71,32 +71,32 @@
                             <div class="form-group">
 					<label for="update_pw1" class="col-sm-3 control-label">PW1</label>
 					<div class="col-sm-8">
-						<input type="password" id="update_pw1" name="update_pw1" class="form-control"/>
+						<input type="password" id="update_pw1" name="update_pw1" class="form-control" onkeypress="input_change(this)"/>
 					</div>
 				</div>
                             <div class="form-group">
 					<label for="update_pw2" class="col-sm-3 control-label">PW2</label>
 					<div class="col-sm-8">
-						<input type="password" id="update_pw2" name="update_pw2" class="form-control"/>
+						<input type="password" id="update_pw2" name="update_pw2" class="form-control" onkeypress="input_change(this)"/>
 					</div>
                             </div>
 
                             <div class="form-group">
                                     <label for="update_name" class="col-sm-3 control-label">이름</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="update_name" name="update_name" class="form-control"/>
+                                            <input type="text" id="update_name" name="update_name" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="update_tel" class="col-sm-3 control-label">연락처</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="update_tel" name="update_tel" class="form-control"/>
+                                            <input type="text" id="update_tel" name="update_tel" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="update_shop_name" class="col-sm-3 control-label">가게명</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="update_shop_name" name="update_shop_name" class="form-control"/>
+                                            <input type="text" id="update_shop_name" name="update_shop_name" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -108,13 +108,13 @@
                             <div class="form-group">
                                     <label for="update_shop_addr" class="col-sm-3 control-label">가게주소</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="update_shop_addr" name="update_shop_addr" class="form-control"/>
+                                            <input type="text" id="update_shop_addr" name="update_shop_addr" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="update_email" class="col-sm-3 control-label">이메일주소</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="update_email" name="update_email" class="form-control"/>
+                                            <input type="text" id="update_email" name="update_email" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -152,33 +152,33 @@
                                     <label for="insert_id" class="col-sm-3 control-label">ID</label>
                                     <div class="col-sm-6">
                                             <input type="hidden" id="confirm_id" name="confirm_id"/>
-                                            <input type="text" id="user_id" name="user_id" class="form-control"/>
+                                            <input type="text" id="user_id" name="user_id" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                                     <div class="col-md-2"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
                             </div>
                             <div class="form-group">
 					<label for="insert_pw1" class="col-sm-3 control-label">PW1</label>
 					<div class="col-sm-8">
-                                            <input type="password" id="user_pw1" name="user_pw1" class="form-control"/>
+                                            <input type="password" id="user_pw1" name="user_pw1" class="form-control" onkeypress="input_change(this)"/>
 					</div>
 				</div>
                             <div class="form-group">
 					<label for="insert_pw2" class="col-sm-3 control-label">PW2</label>
 					<div class="col-sm-8">
-                                            <input type="password" id="user_pw2" name="user_pw2" class="form-control"/>
+                                            <input type="password" id="user_pw2" name="user_pw2" class="form-control" onkeypress="input_change(this)"/>
 					</div>
                             </div>
 
                             <div class="form-group">
                                     <label for="insert_name" class="col-sm-3 control-label">이름</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="user_name" name="user_name" class="form-control"/>
+                                            <input type="text" id="user_name" name="user_name" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_tel" class="col-sm-3 control-label">연락처</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="user_tel" name="user_tel" class="form-control"/>
+                                            <input type="text" id="user_tel" name="user_tel" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -196,13 +196,13 @@
                             <div class="form-group">
                                     <label for="insert_shop_addr" class="col-sm-3 control-label">가게주소</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="shop_addr" name="shop_addr" class="form-control"/>
+                                            <input type="text" id="shop_addr" name="shop_addr" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
                                     <label for="insert_email" class="col-sm-3 control-label">이메일주소</label>
                                     <div class="col-sm-8">
-                                            <input type="text" id="user_email" name="user_email" class="form-control"/>
+                                            <input type="text" id="user_email" name="user_email" class="form-control" onkeypress="input_change(this)"/>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -437,49 +437,53 @@
     
     function requre_params(params, user_pw1, user_pw2){
         
-                var j =0;
-                var check_passwd = new Array();
-                
-                for(var i=0; i<params.length; i++){
-                    if(params[i][0].val() == ""){
-                        alert(params[i][1]+" 을(를) 확인해주세요.");
-                        params[i][0].attr("class","form-control alert-danger");
-                        params[i][0].focus();
-                        return false;
-                    }
-                }
-                
-                if(user_pw1.val() != "" && user_pw2.val() != ""){
-                    var num = user_pw1.val().search(/[0-9]/g);
-                    var eng = user_pw1.val().search(/[a-z]/ig);
-                    var spe = user_pw1.val().search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+        var j =0;
+        var check_passwd = new Array();
 
-                    if(user_pw1.val() != user_pw2.val()){
-                        alert("비밀번호가 서로 다릅니다");
-                        user_pw1.focus();
-                        user_pw1.attr("class","form-control alert-danger");
-                        return false;
-                    }else if( user_pw1.val().length < 8 || user_pw1.val().length > 20){
-                        alert("비밀번호는 8~20자리 이내로 입력해주세요");
-                        user_pw1.focus();
-                        user_pw1.attr("class","form-control alert-danger");
-                        return false;
-                    }else if (user_pw1.val().search(/\s/) != -1){
-                        alert("비밀번호는 공백 없이 입력해주세요.");
-                        user_pw1.focus();
-                        user_pw1.attr("class","form-control alert-danger");
-                        return false;
-                    }else if(num < 0 || eng < 0 || spe < 0){
-                        alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
-                        user_pw1.focus();
-                        user_pw1.attr("class","form-control alert-danger");
-                        return false;
-                    }
-                }
-                
-                
-                return true;
+        for(var i=0; i<params.length; i++){
+            if(params[i][0].val() == ""){
+                alert(params[i][1]+" 을(를) 확인해주세요.");
+                params[i][0].attr("class","form-control alert-danger");
+                params[i][0].focus();
+                return false;
             }
+        }
+
+        if(user_pw1.val() != "" && user_pw2.val() != ""){
+            var num = user_pw1.val().search(/[0-9]/g);
+            var eng = user_pw1.val().search(/[a-z]/ig);
+            var spe = user_pw1.val().search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+            if(user_pw1.val() != user_pw2.val()){
+                alert("비밀번호가 서로 다릅니다");
+                user_pw1.focus();
+                user_pw1.attr("class","form-control alert-danger");
+                return false;
+            }else if( user_pw1.val().length < 8 || user_pw1.val().length > 20){
+                alert("비밀번호는 8~20자리 이내로 입력해주세요");
+                user_pw1.focus();
+                user_pw1.attr("class","form-control alert-danger");
+                return false;
+            }else if (user_pw1.val().search(/\s/) != -1){
+                alert("비밀번호는 공백 없이 입력해주세요.");
+                user_pw1.focus();
+                user_pw1.attr("class","form-control alert-danger");
+                return false;
+            }else if(num < 0 || eng < 0 || spe < 0){
+                alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+                user_pw1.focus();
+                user_pw1.attr("class","form-control alert-danger");
+                return false;
+            }
+        }
+
+
+        return true;
+    }
         
+        
+    function input_change(input){
+        $(input).attr("class", "form-control");
+    }
 </script>
 </html>
