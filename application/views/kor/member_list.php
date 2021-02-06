@@ -32,7 +32,16 @@
 						<td><?=$row->tel?></td>
 						<td><?=$row->email?></td>
                                                 <td><?=$row->addr?></td>
-                                                <td><?=$row->state == "Y" ? "승인" : $row->state == "N" ? "비승인" : "Lv. ".$row->state ?></td>
+                                                <td><?php
+                                                    if($row->state == "Y"){
+                                                        echo "승인";
+                                                    }else if( $row->state == "N"){
+                                                        echo "비승인";
+                                                    }else{
+                                                        echo "Lv. ".$row->state;
+                                                    }
+                                                    ?>
+                                                    </td>
 						<td><button type="button" id="modi_button" onclick="detail_member_show('<?=$row->idx?>')" class="btn btn-default">확인/수정</button></td>
 					</tr>
 				<?php
