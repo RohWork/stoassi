@@ -406,10 +406,10 @@
                 success:function(data){
                     if(data.result){
                         confirm_id[0].val(user_id[0].val());
-                        $("#user_id").attr("class","form-control alert-success");
+                        user_id[0].attr("class","form-control alert-success");
                     }else{
                         alert("중복된 계정입니다.");
-                        $("#user_id").attr("class","form-control alert-danger");
+                        user_id[0].attr("class","form-control alert-danger");
                     }
                 },
                 error: function(xhr,status,error) {
