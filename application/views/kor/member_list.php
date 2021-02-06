@@ -325,7 +325,7 @@
                                     );
 
 
-        if( requre_params(params_array) ){
+        if( requre_params(params_array, user_pw1, user_pw2) ){
                     
             var form = $("#join_form");
 
