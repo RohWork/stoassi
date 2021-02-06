@@ -95,6 +95,11 @@ class Member extends CI_Controller {
                     "category_idx" => $this->input->post("shop_category"),
                     "writer"    => $member_params["writer"],
                 );
+                
+                if(!empty($this->input->post("shop_state"))){
+                    $shop_params["state"] = $this->input->post("shop_state");
+                }
+                
                 $result_shop_idx = $this->shop_md->set_shop($shop_params);
                 
                 if($result_shop_idx){
