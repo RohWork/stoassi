@@ -339,7 +339,7 @@
                 success:function(data){
                     if(data.result == true){
                         alert(data.message);
-                        location.href="/";
+                        location.reload();
                     }else{
                         alert(data.message);
                     }
