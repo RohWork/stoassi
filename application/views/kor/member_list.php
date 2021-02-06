@@ -150,10 +150,11 @@
 			<form id="member_insert_form" enctype="multipart/form-data" class="form-horizontal">
                             <div class="form-group">
                                     <label for="insert_id" class="col-sm-3 control-label">ID</label>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-6">
                                             <input type="hidden" id="insert_confirm_id" name="insert_confirm_id"/>
                                             <input type="text" id="insert_id" name="insert_id" class="form-control"/>
                                     </div>
+                                    <div class="col-md-2"><button type="button" class="btn btn-mini btn-primary btn-block" onclick="id_check();">ID 체크</button></div>
                             </div>
                             <div class="form-group">
 					<label for="insert_pw1" class="col-sm-3 control-label">PW1</label>
