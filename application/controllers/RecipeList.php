@@ -10,7 +10,6 @@ class RecipeList extends CI_Controller {
             
         }
 
-        
         function index(){
             
             
