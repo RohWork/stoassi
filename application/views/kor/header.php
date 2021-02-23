@@ -46,7 +46,7 @@
                         <li <?=$stock_seller?>><a href="/Stock/history_list">재고이력관리</a></li>
                 </ul>
             </li>
-                <li class="dropdown"  <?=$recipe?>>
+                <li class="dropdown <?=$recipe?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                   레시피관리 <span class="caret"></span>
               </a>
