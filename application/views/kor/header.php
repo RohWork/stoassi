@@ -37,7 +37,7 @@
 			
             <li class="dropdown <?=$stock?> ">
                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">
-                        가게재고<span class="caret"></span>
+                        재고관리<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                         <li <?=$stock_list?>><a href="/Stock/stock_list">재고리스트관리</a></li>
@@ -46,13 +46,23 @@
                         <li <?=$stock_seller?>><a href="/Stock/history_list">재고이력관리</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
+                <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                   가게메뉴 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="/Menu/menu_group">메뉴 그룹 관리</a></li>
                 <li><a href="/Menu/menu_manage">메뉴 관리 </a></li>
+              </ul>
+            </li>
+          </ul>
+            <!--
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
@@ -60,6 +70,7 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
+            -->
           </ul>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
