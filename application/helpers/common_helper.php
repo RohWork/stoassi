@@ -79,11 +79,9 @@ if ( ! function_exists('add_querystring_var')) {
 if ( ! function_exists('header_set')) {
     function header_set($menu){
         
-        $stock_array = array("stock_seller","stock_list","stock_category");
+        $stock_array = array("stock_seller","stock_list","stock_category","stock_history");
         $recipe_array = array("recipe_group","recipe_list");
-        $stock_seller = $stock_list = $stock_category = $recipe_group= $recipe_list = $main = $stock = $recipe = "";
-        
-        
+
         if(in_array($menu, $stock_array)){
             $stock = "active";
         }
@@ -92,42 +90,17 @@ if ( ! function_exists('header_set')) {
             $recipe = "active";
         }
         
-        if($menu == "main"){
-            $main = "class='active'";
-        }
-        
-        
-        if($menu == "stock_seller"){
-            $stock_seller = "class='active'";
-        }
-        
-        if($menu == "stock_list"){
-            $stock_list = "class='active'";
-        }
-        
-        if($menu == "stock_category"){
-            $stock_category = "class='active'";
-        }
-        if($menu == "recipe_group"){
-            $recipe_group = "class='active'";
-        }
-        
-        if($menu == "recipe_list"){
-            $recipe_list = "class='active'";
-        }
-           
         
         $head_data = array(
-                    "main"	=> $main,
-                    "stock_list" => $stock_list,
-                    "stock_category" => $stock_category,
-                    "stock_seller" => $stock_seller,
-                    "recipe_group"   => $recipe_group,
-                    "recipe_list"   => $recipe_list,
-                    "stock" => $stock,
-                    "recipe"    => $recipe
+            "main"	=> "",
+            "stock_list" => "",
+            "stock_category" => "",
+
+            "recipe_list"   => "",
+            "stock" => $stock,
+            "recipe"    => $recipe
         );
-        
+        $head_data[$menu] = "class='active'";
         
         return $head_data;
     }
