@@ -96,7 +96,10 @@ if ( ! function_exists('header_set')) {
             "main"	=> "",
             "stock_list" => "",
             "stock_category" => "",
-
+            "stock_seller" => "",
+            "stock_history" => "",
+            "recipe_group"   => "",
+            "recipe_list"   => "",
             "stock" => $stock,
             "recipe"    => $recipe
         );
