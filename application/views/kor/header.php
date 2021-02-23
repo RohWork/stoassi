@@ -46,7 +46,6 @@
                         <li <?=$stock_seller?>><a href="/Stock/history_list">재고이력관리</a></li>
                 </ul>
             </li>
-            <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                   가게메뉴 <span class="caret"></span>
