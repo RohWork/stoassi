@@ -51,8 +51,8 @@
                   레시피관리 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="/Menu/menu_group">레시피그룹관리</a></li>
-                <li><a href="/Menu/menu_manage">레시피리스트관리 </a></li>
+                <li><a href="/Recipe/recipe_group">레시피그룹관리</a></li>
+                <li><a href="/Recipe/recipe_list">레시피리스트관리 </a></li>
               </ul>
             </li>
           </ul>
