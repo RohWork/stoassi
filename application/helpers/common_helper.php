@@ -109,7 +109,6 @@ if ( ! function_exists('header_set')) {
             $recipe_list = "class='active'";
         }
            
-        
         $head_data = array(
                     "main"	=> "class='active'",
                     "stock_list" => $stock_list,
