@@ -9,17 +9,12 @@ class RecipeGroup extends CI_Controller {
             $this->load->model('Recipe_model', 'recipe_md', TRUE);
             
         }
-        function recipe_group(){
+        function index(){
             
 
             $this->load->view(LANGUAGE.'/header', $this->head_data);
         }
         
-        function recipe_list(){
-            
-            
-            
-            $this->load->view(LANGUAGE.'/header', $this->head_data);
-        }
+
         
 }
