@@ -83,10 +83,10 @@ if ( ! function_exists('header_set')) {
         $recipe_group = array("recipe_group","recipe_list");
         $stock_seller = $stock_list = $stock_category = $recipe_group= $recipe_list = $main = $stock = $recipe = "";
         
-        if(in_array($menu, $stock_group)){
+        if(in_array($stock_group, $menu)){
             $stock = "show";
         }
-        if(in_array($menu, $recipe_group)){
+        if(in_array($recipe_group, $menu)){
             $recipe = "show";
         }
         
