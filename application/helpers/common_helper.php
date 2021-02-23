@@ -81,7 +81,8 @@ if ( ! function_exists('header_set')) {
         
         $stock_array = array("stock_seller","stock_list","stock_category","stock_history");
         $recipe_array = array("recipe_group","recipe_list");
-
+        $stock= $recipe = "";
+        
         if(in_array($menu, $stock_array)){
             $stock = "active";
         }
