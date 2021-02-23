@@ -43,7 +43,7 @@
                         <li <?=$stock_list?>><a href="/Stock/stock_list">재고리스트관리</a></li>
                         <li <?=$stock_category?>><a href="/StockCategory/category_list">재고타입관리</a></li>
                         <li <?=$stock_seller?>><a href="/StockSeller/seller_list">재고업체관리</a></li>
-                        <li <?=$stock_seller?>><a href="/Stock/history_list">재고이력관리</a></li>
+                        <li <?=$stock_history?>><a href="/StockHistory/history_list">재고이력관리</a></li>
                 </ul>
             </li>
                 <li class="dropdown <?=$recipe?>">
