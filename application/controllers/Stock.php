@@ -10,14 +10,8 @@ class Stock extends CI_Controller {
                 
 		$this->load->model('Stock_model', 'stock_md', TRUE);
 		
-		$this->head_data = array(
-			"main"	=> "",
-                        "stock" => "active",
-                        "stock_drop" => "show",
-			"stock_list" => "class='active'",
-			"stock_category" => "",
-			"stock_seller" => "",
-		);
+               $this->head_data = header_set("stock_list");
+
 	
 		
 	}

@@ -8,14 +8,7 @@ class Main extends CI_Controller {
 
                 $this->allow=array('index', 'login_process');
                  
-		$this->head_data = array(
-			"main"	=> "class='active'",
-                        "stock" => "",
-                        "stock_drop" => "",
-			"stock_list" => "",
-			"stock_category" => "",
-			"stock_seller" => "",
-		);
+		$this->head_data = header_set("main");
                 
                 $this->load->model('Member_model', 'member_md', TRUE);
                
