@@ -88,7 +88,7 @@ if ( ! function_exists('header_set')) {
             $stock = "show";
         }
         
-        echo $menu;
+        echo $recipe_group;
         if(in_array($menu, $recipe_group)){
             $recipe = "show";
         }
