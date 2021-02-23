@@ -92,6 +92,11 @@ if ( ! function_exists('header_set')) {
             $recipe = "show";
         }
         
+        if($menu == "main"){
+            $main = "class='active'";
+        }
+        
+        
         if($menu == "stock_seller"){
             $stock_seller = "class='active'";
         }
