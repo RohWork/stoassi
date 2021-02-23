@@ -79,17 +79,16 @@ if ( ! function_exists('add_querystring_var')) {
 if ( ! function_exists('header_set')) {
     function header_set($menu){
         
-        $stock_group = array("stock_seller","stock_list","stock_category");
-        $recipe_group = array("recipe_group","recipe_list");
+        $stock_array = array("stock_seller","stock_list","stock_category");
+        $recipe_array = array("recipe_group","recipe_list");
         $stock_seller = $stock_list = $stock_category = $recipe_group= $recipe_list = $main = $stock = $recipe = "";
         
         
-        if(in_array($menu, $stock_group)){
+        if(in_array($menu, $stock_array)){
             $stock = "show";
         }
         
-        echo $recipe_group;
-        if(in_array($menu, $recipe_group)){
+        if(in_array($menu, $recipe_array)){
             $recipe = "show";
         }
         
