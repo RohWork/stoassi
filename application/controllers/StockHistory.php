@@ -10,7 +10,7 @@ class StockHistory extends CI_Controller {
             
         }
 
-        function index(){
+        function history_list(){
             
             
             
