@@ -74,4 +74,57 @@ if ( ! function_exists('add_querystring_var')) {
         }
     }
 }
+
+//모바일 여부
+if ( ! function_exists('header_set')) {
+    function header_set($menu){
+        
+        $stock_group = array("stock_seller","stock_list","stock_category");
+        $recipe_group = array("recipe_group","recipe_list");
+        $stock_seller = $stock_list = $stock_category = $recipe_group= $recipe_list = $main = $stock = $recipe = "";
+        
+        if(in_array($menu, $stock_group)){
+            $stock = "show";
+        }
+        if(in_array($menu, $recipe_group)){
+            $recipe = "show";
+        }
+        
+        if($menu == "stock_seller"){
+            $stock_seller = "class='active'";
+        }
+        
+        if($menu == "stock_list"){
+            $stock_list = "class='active'";
+        }
+        
+        if($menu == "stock_category"){
+            $stock_category = "class='active'";
+        }
+        if($menu == "recipe_group"){
+            $recipe_group = "class='active'";
+        }
+        
+        if($menu == "recipe_list"){
+            $recipe_list = "class='active'";
+        }
+           
+        
+        $head_data = array(
+                    "main"	=> "class='active'",
+                    "stock_list" => $stock_list,
+                    "stock_category" => $stock_category,
+                    "stock_seller" => $stock_seller,
+                    "recipe_group"   => $recipe_group,
+                    "recipe_list"   => $recipe_list,
+                    "stock" => $stock,
+                    "recipe"    => $recipe
+        );
+        
+        
+        return $head_data;
+    }
+    
+    
+}
 ?>
