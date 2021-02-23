@@ -12,14 +12,14 @@ class Recipe extends CI_Controller {
         function recipe_group(){
             
 
-            
+            $this->load->view(LANGUAGE.'/header', $this->head_data);
         }
         
         function recipe_list(){
             
             
             
-            
+            $this->load->view(LANGUAGE.'/header', $this->head_data);
         }
         
 }
