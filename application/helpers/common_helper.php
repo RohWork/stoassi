@@ -113,7 +113,7 @@ if ( ! function_exists('header_set')) {
            
         
         $head_data = array(
-                    "main"	=> "class='active'",
+                    "main"	=> $main,
                     "stock_list" => $stock_list,
                     "stock_category" => $stock_category,
                     "stock_seller" => $stock_seller,
