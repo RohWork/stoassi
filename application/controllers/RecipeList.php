@@ -11,7 +11,7 @@ class RecipeList extends CI_Controller {
         }
 
         
-        function recipe_list(){
+        function index(){
             
             
             
