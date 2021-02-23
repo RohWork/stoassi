@@ -85,11 +85,11 @@ if ( ! function_exists('header_set')) {
         
         
         if(in_array($menu, $stock_array)){
-            $stock = "show";
+            $stock = "active";
         }
         
         if(in_array($menu, $recipe_array)){
-            $recipe = "show";
+            $recipe = "active";
         }
         
         if($menu == "main"){
