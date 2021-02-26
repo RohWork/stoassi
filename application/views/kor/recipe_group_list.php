@@ -120,7 +120,7 @@
     });
 
     $("#input_button").click(function(){
-        $("#modal_category_insert").modal('show');
+        $("#modal_group_insert").modal('show');
     });
 
     function detail_group_show(idx){
