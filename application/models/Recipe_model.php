@@ -27,6 +27,14 @@ class Recipe_model extends CI_Model {
         
         return $this->db->get()->result();
         
-    }	
+    }
+    function insert_group($data){
+        
+        $data['regi_date'] = date('Y-m-d H:i:s');
+        $data['modi_date'] = date('Y-m-d H:i:s');
+        $data['writer'] = $this->session->userdata("user_id");
+        
+        $this->db->insert('recipe_group',$data);
+    }
 }    
 ?>
