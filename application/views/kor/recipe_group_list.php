@@ -145,7 +145,7 @@
             $("#update_group_name").val(data.name);
             $("#update_group_useyn").val(data.state);
             
-            if(data.state == "1"){
+            if(data.state == "Y"){
                 $("#group_use_y").prop("checked", true);
             }else{
                 $("#group_use_y").prop("checked", false);
