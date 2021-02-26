@@ -230,7 +230,7 @@
             if(data.state == "1"){
                 $("#stock_use_y").prop("checked", true);
             }else{
-                $("#stock_use_y").prop("checked", false);
+                $("#stock_use_n").prop("checked", false);
             }
             
 
