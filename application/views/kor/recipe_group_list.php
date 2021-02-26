@@ -120,12 +120,10 @@
     });
 
     $("#input_button").click(function(){
-            $("#modal_category_insert").modal('show');
-			get_category_code(1,0);
-            get_category_info(0, 'insert', 0);
+        $("#modal_category_insert").modal('show');
     });
 
-    function detail_category_show(idx){
+    function detail_group_show(idx){
         var params =  {
                 "idx" : idx
         };
