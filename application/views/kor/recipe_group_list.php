@@ -204,7 +204,7 @@
         }
 	        
         var form = $("#group_update_form");
-        var formData = new FormData(form[0]);
+        var formData = form.serialize();
         
         $.ajax({
             url:'/RecipeGroup/set_update_group',
