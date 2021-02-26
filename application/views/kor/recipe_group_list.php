@@ -25,7 +25,7 @@
 							<td><?=$no?></td>
 							<td><?=$row->name?></td>
 							<td><?=date('Y-m-d', strtotime($row->modi_date))?></td>
-							<td><?=$row->state == 1 ? "사용" : "사용안함" ?></td>
+							<td><?=$row->state == "Y" ? "사용" : "사용안함" ?></td>
 							<td><button type="button" id="modi_button" onclick="detail_group_show('<?=$row->idx?>')" class="btn btn-default">확인/수정</button></td>
 						</tr>
 					<?php
@@ -68,10 +68,10 @@
 					<label for="update_group_useyn" class="col-sm-3 control-label">사용여부</label>
 					<div class="col-sm-9">
 						<label class="radio-inline">
-						<input type="radio" name="update_group_useyn" id="group_use_y" value='1'>사용
+						<input type="radio" name="update_group_useyn" id="group_use_y" value='Y'>사용
 						</label>
 						<label class="radio-inline">
-						<input type="radio" name="update_group_useyn" id="group_use_n" value='2'>사용안함
+						<input type="radio" name="update_group_useyn" id="group_use_n" value='N'>사용안함
 						</label>
 					</div>
 				</div>
