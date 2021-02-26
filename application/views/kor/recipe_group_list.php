@@ -170,8 +170,6 @@
             return;
         }
 		
-		
-
         var form = $("#group_insert_form");
 
         $.ajax({
