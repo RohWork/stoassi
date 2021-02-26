@@ -35,6 +35,7 @@ class Main extends CI_Controller {
                                     'user_idx'      => $result['idx'],
 			            'user_id'       => $result['id'],
 			            'user_name'     => $result['name'],
+                                    'shop_idx'      => $result['shop_idx'],
 			       );
 
                 $this->session->set_userdata($session_data);	//session 등록
