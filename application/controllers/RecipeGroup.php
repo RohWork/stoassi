@@ -18,14 +18,16 @@ class RecipeGroup extends CI_Controller {
             $config['base_url'] = current_url() . '?' . reset_GET('per_page');
             $search_vo->config_per_page = $config['per_page'];
             
-            $config['total_rows'] = $this->recipe_md->count_recipe_list($search_vo);
+            $search_vo->shop_idx = $this->session->userdata("shop_idx");
+            
+            $config['total_rows'] = $this->recipe_md->count_group_list($search_vo);
             $config = setPagination($config);
             $this->pagination->initialize($config);
 		
             $data['pagination'] = $this->pagination->create_links();
             
             if ($config['total_rows'] > 0) {
-                $rows = $this->recipe_md->get_recipe_list($offset, $search_vo);
+                $rows = $this->recipe_md->get_group_list($offset, $search_vo);
             } else {
                 $rows = false;
             }
