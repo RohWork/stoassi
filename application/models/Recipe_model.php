@@ -36,5 +36,16 @@ class Recipe_model extends CI_Model {
         
         $this->db->insert('recipe_group',$data);
     }
+    
+    function get_group_info($data){
+        
+        $this->db->select("*");
+        $this->db->from("recipe_group");
+        $this->db->where($data);
+
+        return $this->db->get()->row();
+        
+        
+    }
 }    
 ?>
