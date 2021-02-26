@@ -82,6 +82,35 @@ class RecipeGroup extends CI_Controller {
         echo json_encode($data);
     }	
 
+    public function get_group_info(){
+        
+        $group_idx = $this->input->post("idx");
+        
+        $where_arr = array(
+                "idx" => $group_idx,
+        );
+	
+        $result = $this->recipe_md->get_group_info($where_arr);
+        
+        if(empty($result)){
+            $code = 400;
+            $message = '잘못된 그룹정보입니다..';
+        }else{
+            $code = 200;
+            $message = '성공.';
+        }
+        
+        $data = array(
+            'code' => $code,
+            'message' => $message,
+            'result'  => $result,
+        );
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
+    
     public function set_update_group(){
 
 
