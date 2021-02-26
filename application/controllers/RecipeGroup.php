@@ -32,7 +32,6 @@ class RecipeGroup extends CI_Controller {
             $rows = false;
         }
 
-        $data['params'] = $params;
         $data['rows'] = $rows;
         $data['base_url'] = $config['base_url'];
         $data['offset'] = $offset;
