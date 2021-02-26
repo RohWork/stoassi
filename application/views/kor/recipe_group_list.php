@@ -144,10 +144,12 @@
             $("#update_group_idx").val(data.idx);
             $("#update_group_name").val(data.name);
             
+            alert(data.state);
+            
             if(data.state == "Y"){
                 $("#group_use_y").prop("checked", true);
             }else{
-                $("#group_use_n").prop("checked", false);
+                $("#group_use_n").prop("checked", true);
             }
             
 
