@@ -224,7 +224,7 @@
         
             $("#update_category_idx").val(data.idx);
             $("#update_category_name").val(data.name);
-			$("#update_category_code").val(data.stock_code);
+            $("#update_category_code").val(data.stock_code);
             $("#update_category_useyn").val(data.state);
             
             if(data.state == "1"){
