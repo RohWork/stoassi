@@ -49,7 +49,8 @@ class RecipeGroup extends CI_Controller {
         $vo = array();
         
         $vo['name'] = $this->input->post("insert_group_name");
- 
+        $vo['shop_idx'] = $data['writer'] = $this->session->userdata("shop_idx");
+                
         if (empty($vo['name'])){
             $code = 400;
             $message = 'insert_group_name 변수의 요청이 올바르지 않습니다.';
