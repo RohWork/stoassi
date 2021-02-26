@@ -47,5 +47,14 @@ class Recipe_model extends CI_Model {
         
         
     }
+    
+    function category_update($data, $idx){
+
+        $data['modi_date'] = date('Y-m-d H:i:s');
+        $data['modifier'] = $this->session->userdata("user_id");
+        
+        $this->db->where("idx",$idx);
+        $this->db->update('stock_category',$data);
+    }
 }    
 ?>
