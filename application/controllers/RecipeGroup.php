@@ -113,7 +113,43 @@ class RecipeGroup extends CI_Controller {
     
     public function set_update_group(){
 
-
+        $code = '';
+        $message = '';
+        
+        $vo = array();
+        
+        $group_idx = $this->input->post("update_group_idx");
+        $vo['name'] = $this->input->post("update_group_name");
+        $vo['state'] = $this->input->post("update_group_useyn");
+                
+        if (empty($vo['name'])){
+            $code = 400;
+            $message = 'update_group_name 변수의 요청이 올바르지 않습니다.';
+        } else{
+            
+            $this->db->trans_begin();
+            
+            $this->recipe_md->group_update($vo, $group_idx);
+            
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                $code = 400;
+                $message = "타입 수정 실패";
+            } else {
+                $this->db->trans_commit();
+                $code = 200;
+                $message = '타입 수정 완료';
+            }
+            
+        }
+            
+        $data = array(
+            'code' => $code,
+            'message' => $message
+        );
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
 
 
     }
