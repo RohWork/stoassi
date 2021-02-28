@@ -5,12 +5,12 @@
 			<p class="lead">레시피 관리 화면</p>
 		</div>
                 <div class="col-sm-12">
-                    <select id="group_select" name="group_select">
-                        <?php
+                    <select id="group_select" name="group_select" class="form-control">
+                        <!--<?php
                             foreach($group_rows as $grow){
                                 echo "<option value='".$grow->idx."'>".$grow->name."</option>";
                             }
-                        ?>
+                        ?>-->
                     </select>
                 </div>
 		<div class="table-responsive">
