@@ -68,7 +68,7 @@ class Recipe_model extends CI_Model {
         
         $this->db->select('*');
         $this->db->from('recipe_info as ri');
-        if(!empty($search_vo->group)){
+        if(!empty($search_vo->group_idx)){
             $this->db->where('ri.group_idx', $search_vo->group_idx);
         }
         $this->db->order_by("ri.idx", "desc");
