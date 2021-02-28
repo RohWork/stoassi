@@ -4,7 +4,7 @@
                     <h1>레시피 관리</h1>
                     <p class="lead">레시피 관리 화면</p>
             </div>
-            <div class="row" style="margin-bottom: 2rem">
+            <div class="row" style="margin-bottom: 3rem">
                 <div class="col-sm-1">
                     <label class="control-label">그룹명</label>
                 </div>
