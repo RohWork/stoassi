@@ -13,7 +13,7 @@
                         <option value="0">선택없음</option>
                         <?php
                             foreach($group_rows as $grow){
-                                if($grow->idx == $search_vo['group_idx']){
+                                if($grow->idx == $search_vo->group_idx){
                                     echo "<option value='".$grow->idx."' selected>".$grow->name."</option>";
                                 }else{
                                     echo "<option value='".$grow->idx."'>".$grow->name."</option>";
