@@ -6,7 +6,7 @@
 		</div>
                 <div class="row">
                     <div class="col-sm-2" >
-                        <select id="group_select" name="group_select" class="form-control mb-3">
+                        <select id="group_select" name="group_select" class="form-control">
                             <?php
                                 foreach($group_rows as $grow){
                                     echo "<option value='".$grow->idx."'>".$grow->name."</option>";
@@ -14,6 +14,9 @@
                             ?>
                         </select>
                     </div>
+                </div>
+                <div class="row">
+                    
                 </div>
 		<div class="table-responsive">
 			<table class="table">
