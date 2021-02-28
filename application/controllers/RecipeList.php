@@ -37,8 +37,6 @@ class RecipeList extends CI_Controller {
         $search_vo->shop_idx = $this->session->userdata("shop_idx");
         $data['group_rows'] = $this->recipe_md->get_group_list(0,$search_vo);
         
-        var_dump($data['group_rows']);
-        
         $data['rows'] = $rows;
         $data['base_url'] = $config['base_url'];
         $data['offset'] = $offset;
