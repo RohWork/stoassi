@@ -5,7 +5,7 @@
 			<p class="lead">레시피 관리 화면</p>
 		</div>
                 <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-sm-2" style="margin-bottom: 30px">
                         <select id="group_select" name="group_select" class="form-control">
                             <?php
                                 foreach($group_rows as $grow){
