@@ -26,6 +26,10 @@ class Recipe_model extends CI_Model {
         if(!empty($search_vo->config_per_page)){
             $this->db->limit($search_vo->config_per_page, $offset);
         }
+        if(!empty($search_vo->state)){
+            $this->db->where('rg.state', $search_vo->state);
+        }
+        
         return $this->db->get()->result();
         
     }
