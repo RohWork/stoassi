@@ -42,7 +42,7 @@ class RecipeList extends CI_Controller {
         $data['rows'] = $rows;
         $data['base_url'] = $config['base_url'];
         $data['offset'] = $offset;
-
+        $data['search_vo'] = $search_vo;
 
         $this->load->view(LANGUAGE.'/header', $this->head_data);
         $this->load->view(LANGUAGE.'/recipe_list', $data);
