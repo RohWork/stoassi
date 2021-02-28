@@ -5,8 +5,12 @@
                     <p class="lead">레시피 관리 화면</p>
             </div>
             <div class="row" style="margin-bottom: 2rem">
+                <div class="col-sm-1">
+                    <label class="control-label">그룹명</label>
+                </div>
                 <div class="col-sm-2" >
                     <select id="group_select" name="group_select" class="form-control">
+                        <option value="0">선택없음</option>
                         <?php
                             foreach($group_rows as $grow){
                                 echo "<option value='".$grow->idx."'>".$grow->name."</option>";
