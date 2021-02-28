@@ -4,9 +4,6 @@
 			<h1>레시피 관리</h1>
 			<p class="lead">레시피 관리 화면</p>
 		</div>
-                <div class="col-sm-12">
-
-                </div>
 		<div class="table-responsive">
 			<table class="table">
 				<thead>
