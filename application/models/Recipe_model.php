@@ -76,7 +76,7 @@ class Recipe_model extends CI_Model {
         
         $this->db->select('ri.*, rg.group_name');
         $this->db->from('recipe_info as ri');
-        $this->db->join('recipe_group as rg',"left","ri.group_idx = rg.idx");
+        $this->db->join('recipe_group as rg',"ri.group_idx = rg.idx","left");
         $this->db->where('ri.group_idx', $search_vo->group_idx);
         $this->db->order_by("ri.idx", "desc");
         $this->db->limit($search_vo->config_per_page, $offset);
