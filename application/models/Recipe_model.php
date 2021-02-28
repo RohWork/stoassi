@@ -75,7 +75,7 @@ class Recipe_model extends CI_Model {
 
     function get_recipe_list($offset, $search_vo){
         
-        $this->db->select('ri.*, rg.name');
+        $this->db->select('ri.*, rg.name as group_name');
         $this->db->from('recipe_info as ri');
         $this->db->join('recipe_group as rg',"ri.group_idx = rg.idx","left");
         if(!empty($search_vo->group_idx)){
