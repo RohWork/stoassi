@@ -132,7 +132,9 @@
 
 	
     $(document).ready(function(){
-	
+	$("#group_select").change(){
+            location.href = "/RecipeList/recipe_list?group_idx="+$("#group_select").val();
+        }
         
     });
 
