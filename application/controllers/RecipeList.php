@@ -33,8 +33,8 @@ class RecipeList extends CI_Controller {
         } else {
             $rows = false;
         }
-        
-        $data['group_rows'] = $this->recipe_md->get_group_list();
+        $search_vo->shop_idx = $this->session->userdata("shop_idx");
+        $data['group_rows'] = $this->recipe_md->get_group_list($search_vo);
         
         var_dump($data['group_rows']);
         
