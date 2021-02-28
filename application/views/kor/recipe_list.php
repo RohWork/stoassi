@@ -5,7 +5,7 @@
 			<p class="lead">레시피 관리 화면</p>
 		</div>
                 <div class="col-sm-12">
-                    <select id="group_select">
+                    <select id="group_select" name="group_select">
                         <?php
                             foreach($group_rows as $grow){
                                 echo "<option value='".$grow->idx."'>".$grow->name."</option>";
