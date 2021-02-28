@@ -18,7 +18,8 @@ class RecipeList extends CI_Controller {
         $offset = $this->input->get('per_page');
         $config['base_url'] = current_url() . '?' . reset_GET('per_page');
         $search_vo->config_per_page = $config['per_page'];
-
+        
+        
         $search_vo->group = $this->input->post("group_idx");
 
         $config['total_rows'] = $this->recipe_md->count_recipe_list($search_vo);
