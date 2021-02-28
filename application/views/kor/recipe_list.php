@@ -1,8 +1,8 @@
 
 	<div class="container">
 		<div class="page-header">
-			<h1>레시피 그룹 관리</h1>
-			<p class="lead">레시피그룹 관리 화면</p>
+			<h1>레시피 관리</h1>
+			<p class="lead">레시피 관리 화면</p>
 		</div>
 		<div class="table-responsive">
 			<table class="table">
@@ -34,7 +34,7 @@
 						$no++;
 					}
 				}else{
-					echo "<tr><td colspan='5' align='center'>데이터없음</td></tr>";	
+					echo "<tr><td colspan='6' align='center'>데이터없음</td></tr>";	
 				}
 					?>				
 				</tbody>
