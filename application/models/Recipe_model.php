@@ -56,5 +56,32 @@ class Recipe_model extends CI_Model {
         $this->db->where("idx",$idx);
         $this->db->update('recipe_group',$data);
     }
+    
+    
+    
+    function count_recipe_list($search_vo){
+        
+        $this->db->select('*');
+        $this->db->from('recipe_info as ri');
+        $this->db->where('ri.group_idx', $search_vo->group_idx);
+        $this->db->order_by("ri.idx", "desc");
+        
+        return $this->db->count_all_results();
+        
+    }
+
+    function get_recipe_list($offset, $search_vo){
+        
+        $this->db->select('ri.*, rg.group_name');
+        $this->db->from('recipe_info as ri');
+        $this->db->join('recipe_group as rg',"left","ri.group_idx = rg.idx");
+        $this->db->where('ri.group_idx', $search_vo->group_idx);
+        $this->db->order_by("ri.idx", "desc");
+        $this->db->limit($search_vo->config_per_page, $offset);
+        
+        return $this->db->get()->result();
+        
+    }
+    
 }    
 ?>
