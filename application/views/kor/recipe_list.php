@@ -4,7 +4,7 @@
                     <h1>레시피 관리</h1>
                     <p class="lead">레시피 관리 화면</p>
             </div>
-            <div class="row" style="margin-bottom: 30rem">
+            <div class="row" style="margin-bottom: 1rem">
                 <div class="col-sm-2" >
                     <select id="group_select" name="group_select" class="form-control">
                         <?php
