@@ -41,7 +41,7 @@
 			</table>
 		</div>
 		<div class="col-sm-12">
-			<button type="button" id="input_button" class="btn btn-primary">그룹 추가</button>
+			<button type="button" id="input_button" class="btn btn-primary">레시피 추가</button>
 		</div>
 		<div class="col-sm-offset-5">
 			<ul class="pagination">
