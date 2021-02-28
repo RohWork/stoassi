@@ -23,7 +23,7 @@ class Recipe_model extends CI_Model {
         $this->db->from('recipe_group as rg');
         $this->db->where('rg.shop_idx', $search_vo->shop_idx);
         $this->db->order_by("rg.idx", "desc");
-        if(!empty($search_vo->config_per_page) ){
+        if(!empty($search_vo->config_per_page)){
             $this->db->limit($search_vo->config_per_page, $offset);
         }
         return $this->db->get()->result();
@@ -85,6 +85,8 @@ class Recipe_model extends CI_Model {
         return $this->db->get()->result();
         
     }
+    
+    
     
 }    
 ?>
