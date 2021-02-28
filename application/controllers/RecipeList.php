@@ -20,7 +20,7 @@ class RecipeList extends CI_Controller {
         $search_vo->config_per_page = $config['per_page'];
         
         
-        $search_vo->group = $this->input->get("group_idx");
+        $search_vo->group_idx = $this->input->get("group_idx");
 
         $config['total_rows'] = $this->recipe_md->count_recipe_list($search_vo);
         $config = setPagination($config);
