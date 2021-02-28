@@ -4,9 +4,9 @@
 			<h1>레시피 관리</h1>
 			<p class="lead">레시피 관리 화면</p>
 		</div>
-                <div class="row pb-3">
+                <div class="row">
                     <div class="col-sm-2" >
-                        <select id="group_select" name="group_select" class="form-control">
+                        <select id="group_select" name="group_select" class="form-control mb-3">
                             <?php
                                 foreach($group_rows as $grow){
                                     echo "<option value='".$grow->idx."'>".$grow->name."</option>";
