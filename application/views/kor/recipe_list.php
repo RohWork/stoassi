@@ -1,67 +1,64 @@
 
 	<div class="container">
-		<div class="page-header">
-			<h1>레시피 관리</h1>
-			<p class="lead">레시피 관리 화면</p>
-		</div>
-                <div class="row">
-                    <div class="col-sm-2" >
-                        <select id="group_select" name="group_select" class="form-control">
+            <div class="page-header">
+                    <h1>레시피 관리</h1>
+                    <p class="lead">레시피 관리 화면</p>
+            </div>
+            <div class="row" style="margin-bottom: 30rem">
+                <div class="col-sm-2" >
+                    <select id="group_select" name="group_select" class="form-control">
+                        <?php
+                            foreach($group_rows as $grow){
+                                echo "<option value='".$grow->idx."'>".$grow->name."</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="table-responsive">
+                    <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th>NO</th>
+                                            <th>그룹명</th>
+                                            <th>레시피명</th>
+                                            <th>소요시간</th>
+                                            <th>사용여부</th>
+                                            <th>수정/삭제</th>
+                                    </tr>
+                            </thead>
+                            <tbody>
                             <?php
-                                foreach($group_rows as $grow){
-                                    echo "<option value='".$grow->idx."'>".$grow->name."</option>";
-                                }
-                            ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    
-                </div>
-		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>NO</th>
-						<th>그룹명</th>
-                                                <th>레시피명</th>
-						<th>소요시간</th>
-						<th>사용여부</th>
-						<th>수정/삭제</th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php
-				$no =1+$offset;
-				if(!empty($rows)){
-					foreach($rows as $row){
-					?>
-						<tr>
-							<td><?=$no?></td>
-							<td><?=$row->group_name?></td>
-                                                        <td><?=$row->name?></td>
-							<td><?=date('Y-m-d', strtotime($row->modi_date))?></td>
-							<td><?=$row->state == "Y" ? "사용" : "사용안함" ?></td>
-							<td><button type="button" id="modi_button" onclick="detail_group_show('<?=$row->idx?>')" class="btn btn-default">확인/수정</button></td>
-						</tr>
-					<?php
-						$no++;
-					}
-				}else{
-					echo "<tr><td colspan='6' align='center'>데이터없음</td></tr>";	
-				}
-					?>				
-				</tbody>
-			</table>
-		</div>
-		<div class="col-sm-12">
-			<button type="button" id="input_button" class="btn btn-primary">레시피 추가</button>
-		</div>
-		<div class="col-sm-offset-5">
-			<ul class="pagination">
-				<?= $pagination ?>
-			</ul>
-		</div>
+                            $no =1+$offset;
+                            if(!empty($rows)){
+                                    foreach($rows as $row){
+                                    ?>
+                                            <tr>
+                                                    <td><?=$no?></td>
+                                                    <td><?=$row->group_name?></td>
+                                                    <td><?=$row->name?></td>
+                                                    <td><?=date('Y-m-d', strtotime($row->modi_date))?></td>
+                                                    <td><?=$row->state == "Y" ? "사용" : "사용안함" ?></td>
+                                                    <td><button type="button" id="modi_button" onclick="detail_group_show('<?=$row->idx?>')" class="btn btn-default">확인/수정</button></td>
+                                            </tr>
+                                    <?php
+                                            $no++;
+                                    }
+                            }else{
+                                    echo "<tr><td colspan='6' align='center'>데이터없음</td></tr>";	
+                            }
+                                    ?>				
+                            </tbody>
+                    </table>
+            </div>
+            <div class="col-sm-12">
+                    <button type="button" id="input_button" class="btn btn-primary">레시피 추가</button>
+            </div>
+            <div class="col-sm-offset-5">
+                    <ul class="pagination">
+                            <?= $pagination ?>
+                    </ul>
+            </div>
 	</div>
 	<!-- Modal -->
 	<div id="modal_group_detail" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
