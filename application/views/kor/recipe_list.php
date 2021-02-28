@@ -3,13 +3,15 @@
 		<div class="page-header">
 			<h1>레시피 관리</h1>
 			<p class="lead">레시피 관리 화면</p>
-                        <select id="group_select" name="group_select" class="form-control">
-                            <?php
-                                foreach($group_rows as $grow){
-                                    echo "<option value='".$grow->idx."'>".$grow->name."</option>";
-                                }
-                            ?>
-                        </select>
+                        <div class="col-sm-12">
+                            <select id="group_select" name="group_select" class="form-control">
+                                <?php
+                                    foreach($group_rows as $grow){
+                                        echo "<option value='".$grow->idx."'>".$grow->name."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
 		</div>
 		<div class="table-responsive">
 			<table class="table">
