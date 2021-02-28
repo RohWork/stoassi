@@ -44,7 +44,7 @@
                                     ?>
                                             <tr>
                                                     <td><?=$no?></td>
-                                                    <td><?=$row->group_name?></td>
+                                                    <td><?=$row->group_name?>(<?=$row->group_state == "Y" ? "사용" : "사용안함" ?>)</td>
                                                     <td><?=$row->name?></td>
                                                     <td><?=date('Y-m-d', strtotime($row->modi_date))?></td>
                                                     <td><?=$row->state == "Y" ? "사용" : "사용안함" ?></td>
