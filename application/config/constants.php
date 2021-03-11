@@ -96,5 +96,3 @@ for($j=1;$j<10;$j++){
 if($_SERVER['HTTP_HOST'] != "stoassi.co.kr"){
     define('CATEGORY_CODE', $code_arr);
 }
-
-phpinfo();
