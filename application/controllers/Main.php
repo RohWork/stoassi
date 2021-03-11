@@ -5,7 +5,7 @@ class Main extends CI_Controller {
 	
 	function __construct() {
 		parent ::__construct();
-                session_start();
+
                 $this->allow=array('index', 'login_process');
                  
 		$this->head_data = header_set("main");
