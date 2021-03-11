@@ -5,18 +5,19 @@ class Log extends CI_Controller{
     
     function __construct()
     {
-        $this->CI =& get_instance();
+        //$this->CI =& get_instance();
         
          
         if(!isset($this->CI->session)){  
-              $this->CI->load->library('session');  
+           //   $this->CI->load->library('session');  
         }
     }
     
     function checkPermission(){
        
         $CI =& get_instance();
-
+        
+        $CI->load->library('session');  
         $CI->load->helper('url');
        
         if(isset($CI->allow) && (is_array($CI->allow) === false OR in_array($CI->router->method, $CI->allow) === false))
