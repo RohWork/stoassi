@@ -38,7 +38,7 @@ class Main extends CI_Controller {
                                     'shop_idx'      => $result['shop_idx'],
 			       );
 
-                $this->session->set_userdata($session_data);	//session 등록
+                $this->CI->session->set_userdata($session_data);	//session 등록
                 session_commit();
                 
                 $message = "";
