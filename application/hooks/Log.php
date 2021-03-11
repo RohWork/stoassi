@@ -9,7 +9,7 @@ class Log extends CI_Controller{
         
          
         if(!isset($this->CI->session)){  
-              $this->CI->load->library('session');  
+              //$this->CI->load->library('session');  
         }
     }
     
