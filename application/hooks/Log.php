@@ -17,7 +17,7 @@ class Log extends CI_Controller{
        
         $CI =& get_instance();
         
-        $CI->load->library('session');  
+        //$CI->load->library('session');  
         $CI->load->helper('url');
        
         if(isset($CI->allow) && (is_array($CI->allow) === false OR in_array($CI->router->method, $CI->allow) === false))
