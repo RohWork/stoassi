@@ -1,5 +1,4 @@
 <?php
-
 /**
  * CodeIgniter
  *
@@ -305,7 +304,7 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
-        session_start();
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
