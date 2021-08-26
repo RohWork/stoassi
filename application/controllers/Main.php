@@ -20,7 +20,7 @@ class Main extends CI_Controller {
 	}
         
         public function login_process()
-        {
+        { 
             $user_id = $this->input->post("user_id");
             $user_pw = base64_encode(hash('sha512',$this->input->post("user_pw"),true));
             
